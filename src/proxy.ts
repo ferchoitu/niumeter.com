@@ -1,9 +1,6 @@
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
 
-// Required for Cloudflare Workers (OpenNext) — must be Edge runtime
-export const runtime = "experimental-edge";
-
 export default createMiddleware(routing);
 
 export const config = {
