@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "siteName": "Niumeter",
+    "siteDescription": "Financial and salary calculators for Argentina and Latin America. Calculate your net salary, bonus, and severance pay."
+  },
+  "nav": {
+    "calculadoras": "Calculators",
+    "argentina": "Argentina",
+    "sueldoNeto": "Net Salary",
+    "aguinaldo": "Annual Bonus",
+    "indemnizacion": "Severance",
+    "freelance": "Freelance",
+    "idioma": "Language",
+    "menu": "Menu"
+  },
+  "home": {
+    "hero": {
+      "headline": "Calculate what you actually earn",
+      "subheadline": "Precise tools to understand your salary, taxes, and labor rights. Updated for 2026.",
+      "cta": "Salary Calculator",
+      "ctaSecondary": "Explore all"
+    },
+    "calculadoras": {
+      "titulo": "Available Calculators",
+      "descripcion": "Select the type of calculation you need"
+    },
+    "paises": {
+      "titulo": "Available Countries",
+      "argentina": "Argentina",
+      "proximamente": "Coming Soon"
+    },
+    "trust": {
+      "titulo": "Data updated for 2026",
+      "descripcion": "We periodically verify against official sources for each country.",
+      "item1": "AFIP Argentina Data",
+      "item2": "Updated 2026",
+      "item3": "No registration required",
+      "fechaActualizacion": "Last updated"
+    },
+    "cards": {
+      "sueldoNeto": {
+        "titulo": "Net Salary Calculator",
+        "descripcion": "Calculate your take-home pay from your gross salary, with all deductions.",
+        "cta": "Calculate now"
+      },
+      "aguinaldo": {
+        "titulo": "Annual Bonus Calculator",
+        "descripcion": "Estimate your SAC based on the best salary of the semester.",
+        "cta": "Coming soon"
+      },
+      "indemnizacion": {
+        "titulo": "Severance Calculator",
+        "descripcion": "Know your rights in case of dismissal.",
+        "cta": "Coming soon"
+      },
+      "freelance": {
+        "titulo": "Freelance Calculator",
+        "descripcion": "Convert your freelance rate to an employment equivalent.",
+        "cta": "Coming soon"
+      }
+    }
+  },
+  "calculator": {
+    "argentina": {
+      "titulo": "Argentina Net Salary Calculator 2026",
+      "descripcion": "Calculate your net salary in Argentina including contributions, withholdings, and income tax.",
+      "inputs": {
+        "sueldoBruto": "Monthly gross salary (ARS)",
+        "sueldoBrutoPlaceholder": "e.g.: 1,500,000",
+        "convenio": "Are you covered by a collective agreement?",
+        "aporteGremial": "Union contribution (%)",
+        "aporteGremialPlaceholder": "e.g.: 2",
+        "conyuge": "Do you have a dependent spouse?",
+        "hijos": "Number of children",
+        "descuentoAdicional": "Additional deduction (ARS)",
+        "descuentoAdicionalPlaceholder": "Health insurance, rent, etc.",
+        "calcularBtn": "Calculate",
+        "compartirBtn": "Share this calculation",
+        "copiadoMsg": "Link copied!"
+      },
+      "resultados": {
+        "sueldoNeto": "Monthly Net Salary",
+        "sueldoBruto": "Gross Salary",
+        "totalDescuentos": "Total deductions",
+        "porcentajeDescuentos": "of gross",
+        "desglose": "Deduction breakdown",
+        "jubilacion": "Pension",
+        "obraSocial": "Health Insurance",
+        "ley19032": "Law 19.032 (INSSJP)",
+        "aporteGremial": "Union contribution",
+        "impuestoGanancias": "Income Tax",
+        "descuentoAdicional": "Additional deduction",
+        "comparativa": "Comparison with/without Income Tax",
+        "sinGanancias": "Without Income Tax",
+        "conGanancias": "With Income Tax",
+        "diferencia": "Difference",
+        "graficaTitulo": "Your salary breakdown",
+        "netoLabel": "Net",
+        "descuentosLabel": "Deductions"
+      },
+      "advertencia": "⚠️ Tax data is for reference purposes. Always verify with your payroll accountant.",
+      "todoAviso": "Tax values are pending official validation."
+    }
+  },
+  "seo": {
+    "argentinaCalc": {
+      "title": "Argentina Net Salary Calculator 2026 | Niumeter",
+      "description": "Calculate your net salary in Argentina 2026. Pension, health insurance, and income tax deductions. Instant result, no registration.",
+      "h1": "Argentina Net Salary Calculator 2026"
+    },
+    "home": {
+      "title": "Financial Calculators Argentina 2026 | Niumeter",
+      "description": "Net salary, annual bonus, and severance calculators for Argentina. Updated data for 2026. No registration required."
+    }
+  },
+  "footer": {
+    "calculadoras": "Calculators",
+    "argentina": "Argentina",
+    "sueldoNeto": "Net Salary",
+    "aguinaldo": "Annual Bonus",
+    "indemnizacion": "Severance",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "disclaimer": "Niumeter is an informational tool. It does not replace professional accounting or tax advice.",
+    "copyright": "© 2026 Niumeter. All rights reserved.",
+    "madeWith": "Made with ♥ for Latin American workers"
+  },
+  "breadcrumbs": {
+    "inicio": "Home",
+    "calculadoras": "Calculators",
+    "argentina": "Argentina",
+    "sueldoNeto": "Net Salary"
+  },
+  "common": {
+    "cargando": "Calculating...",
+    "error": "Please enter a valid value",
+    "ars": "ARS",
+    "pesos": "pesos",
+    "porMes": "per month",
+    "si": "Yes",
+    "no": "No"
+  }
+}

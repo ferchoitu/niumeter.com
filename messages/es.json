@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "siteName": "Niumeter",
+    "siteDescription": "Calculadoras financieras y de sueldo para Argentina y Latinoamérica. Calculá tu sueldo neto, aguinaldo e indemnización."
+  },
+  "nav": {
+    "calculadoras": "Calculadoras",
+    "argentina": "Argentina",
+    "sueldoNeto": "Sueldo Neto",
+    "aguinaldo": "Aguinaldo",
+    "indemnizacion": "Indemnización",
+    "freelance": "Freelance",
+    "idioma": "Idioma",
+    "menu": "Menú"
+  },
+  "home": {
+    "hero": {
+      "headline": "Calculá lo que realmente ganás",
+      "subheadline": "Herramientas exactas para entender tu sueldo, tus impuestos y tus derechos laborales. Actualizadas para 2026.",
+      "cta": "Ver calculadora de sueldo",
+      "ctaSecondary": "Explorar todas"
+    },
+    "calculadoras": {
+      "titulo": "Calculadoras disponibles",
+      "descripcion": "Seleccioná el tipo de cálculo que necesitás"
+    },
+    "paises": {
+      "titulo": "Países disponibles",
+      "argentina": "Argentina",
+      "proximamente": "Próximamente"
+    },
+    "trust": {
+      "titulo": "Datos actualizados a 2026",
+      "descripcion": "Verificamos periódicamente contra las fuentes oficiales de cada país.",
+      "item1": "Datos de AFIP Argentina",
+      "item2": "Actualizado en 2026",
+      "item3": "Sin registro requerido",
+      "fechaActualizacion": "Última actualización"
+    },
+    "cards": {
+      "sueldoNeto": {
+        "titulo": "Calculadora de Sueldo Neto",
+        "descripcion": "Calculá cuánto te queda en mano de tu sueldo bruto, con todos los descuentos.",
+        "cta": "Calcular ahora"
+      },
+      "aguinaldo": {
+        "titulo": "Calculadora de Aguinaldo",
+        "descripcion": "Estimá tu SAC según el mejor salario del semestre.",
+        "cta": "Próximamente"
+      },
+      "indemnizacion": {
+        "titulo": "Calculadora de Indemnización",
+        "descripcion": "Conocé tus derechos ante una desvinculación.",
+        "cta": "Próximamente"
+      },
+      "freelance": {
+        "titulo": "Calculadora Freelance",
+        "descripcion": "Convertí tu tarifa freelance a equivalente en relación de dependencia.",
+        "cta": "Próximamente"
+      }
+    }
+  },
+  "calculator": {
+    "argentina": {
+      "titulo": "Calculadora de Sueldo Neto Argentina 2026",
+      "descripcion": "Calculá tu sueldo neto en Argentina incluyendo aportes, retenciones y ganancias.",
+      "inputs": {
+        "sueldoBruto": "Sueldo bruto mensual (ARS)",
+        "sueldoBrutoPlaceholder": "Ej: 1.500.000",
+        "convenio": "¿Está en convenio colectivo?",
+        "aporteGremial": "Aporte gremial (%)",
+        "aporteGremialPlaceholder": "Ej: 2",
+        "conyuge": "¿Tiene cónyuge a cargo?",
+        "hijos": "Cantidad de hijos",
+        "descuentoAdicional": "Descuento adicional (ARS)",
+        "descuentoAdicionalPlaceholder": "Medicina prepaga, alquiler, etc.",
+        "calcularBtn": "Calcular",
+        "compartirBtn": "Compartir este cálculo",
+        "copiadoMsg": "¡Link copiado!"
+      },
+      "resultados": {
+        "sueldoNeto": "Sueldo Neto Mensual",
+        "sueldoBruto": "Sueldo Bruto",
+        "totalDescuentos": "Total descuentos",
+        "porcentajeDescuentos": "del bruto",
+        "desglose": "Desglose de descuentos",
+        "jubilacion": "Jubilación",
+        "obraSocial": "Obra Social",
+        "ley19032": "Ley 19.032 (INSSJP)",
+        "aporteGremial": "Aporte gremial",
+        "impuestoGanancias": "Impuesto a las Ganancias",
+        "descuentoAdicional": "Descuento adicional",
+        "comparativa": "Comparativa con/sin Ganancias",
+        "sinGanancias": "Sin Ganancias",
+        "conGanancias": "Con Ganancias",
+        "diferencia": "Diferencia",
+        "graficaTitulo": "Distribución de tu sueldo",
+        "netoLabel": "Neto",
+        "descuentosLabel": "Descuentos"
+      },
+      "advertencia": "⚠️ Los datos fiscales son referenciales. Verificá siempre con tu liquidador de sueldos.",
+      "todoAviso": "Los valores fiscales están marcados como pendientes de validación oficial."
+    }
+  },
+  "seo": {
+    "argentinaCalc": {
+      "title": "Calculadora Sueldo Neto Argentina 2026 | Niumeter",
+      "description": "Calculá tu sueldo neto en Argentina 2026 con datos actualizados de ARCA. Descontás aportes, Ganancias, ves el desglose real y cobrás sin sorpresas.",
+      "h1": "Calculadora de Sueldo Neto en Argentina 2026"
+    },
+    "home": {
+      "title": "Calculadoras Financieras Argentina 2026 | Niumeter",
+      "description": "Calculadoras de sueldo neto, aguinaldo e indemnización para Argentina. Datos actualizados 2026. Sin registro."
+    }
+  },
+  "footer": {
+    "calculadoras": "Calculadoras",
+    "argentina": "Argentina",
+    "sueldoNeto": "Sueldo Neto",
+    "aguinaldo": "Aguinaldo",
+    "indemnizacion": "Indemnización",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacidad",
+    "terms": "Términos de Uso",
+    "disclaimer": "Niumeter es una herramienta informativa. No reemplaza el asesoramiento contable o impositivo profesional.",
+    "copyright": "© 2026 Niumeter. Todos los derechos reservados.",
+    "madeWith": "Hecho con ♥ para trabajadores de Latinoamérica"
+  },
+  "breadcrumbs": {
+    "inicio": "Inicio",
+    "calculadoras": "Calculadoras",
+    "argentina": "Argentina",
+    "sueldoNeto": "Sueldo Neto"
+  },
+  "common": {
+    "cargando": "Calculando...",
+    "error": "Por favor ingresá un valor válido",
+    "ars": "ARS",
+    "pesos": "pesos",
+    "porMes": "por mes",
+    "si": "Sí",
+    "no": "No"
+  }
+}

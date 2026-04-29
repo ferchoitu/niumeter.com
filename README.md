@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Niumeter — Hub de Calculadoras Financieras
 
-## Getting Started
+Hub bilingüe (ES/EN) de calculadoras financieras y de sueldo para latinoamérica. Construido con Next.js 15, Tailwind CSS v4, shadcn/ui y next-intl. Optimizado para SEO programático y Core Web Vitals.
 
-First, run the development server:
+## Stack
+
+- **Framework:** Next.js 15 (App Router) + TypeScript
+- **Styling:** Tailwind CSS v4
+- **UI Components:** shadcn/ui
+- **i18n:** next-intl (`/es/` y `/en/`)
+- **Charts:** recharts
+- **Forms:** react-hook-form + zod
+- **Analytics:** Vercel Analytics + GA4 (via env var)
+- **Deploy:** Vercel (región `gru1` — South America)
+
+## Setup local
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # completar variables
+npm run dev                    # → localhost:3000 redirige a /es
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Páginas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| URL | Descripción |
+|-----|-------------|
+| `/es` | Homepage español |
+| `/en` | Homepage inglés |
+| `/es/calculadora-sueldo/argentina` | Calculadora sueldo neto Argentina |
+| `/sitemap.xml` | Sitemap dinámico |
+| `/api/og?title=...` | OG Image edge function |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Cómo agregar una nueva calculadora
 
-## Learn More
+1. **Datos fiscales** → `src/lib/data/tax-data.ts` (nuevo país/bloque con TODOs)
+2. **Lógica pura** → `src/lib/calculations/<pais>-<tipo>.ts`
+3. **Componente** → `src/components/calculators/<Nombre>Calculator.tsx` (mismo patrón que Argentina)
+4. **Página** → `src/app/[locale]/calculadora-<tipo>/<pais>/page.tsx` (con `generateMetadata` + JSON-LD)
+5. **Traducciones** → `messages/es.json` y `messages/en.json`
+6. **Sitemap** → agregar ruta en `src/app/sitemap.ts`
+7. **Nav** → actualizar `Header.tsx` y `Footer.tsx`
 
-To learn more about Next.js, take a look at the following resources:
+## TODOs pendientes — data fiscal
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Archivo | Item |
+|---------|------|
+| `tax-data.ts` | Validar TODOS los valores contra AFIP 2026 |
+| `argentina-salary.ts` | Implementar retención mensual acumulada (tabla AFIP) |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## TODOs pendientes — contenido
 
-## Deploy on Vercel
+| Archivo | Item |
+|---------|------|
+| `calculadora-sueldo/argentina/page.tsx` | ~800 palabras SEO (marcado `[CONTENIDO PENDIENTE]`) |
+| `/privacy`, `/terms` | Crear páginas legales reales |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## TODOs pendientes — monetización
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Archivo | Acción |
+|---------|--------|
+| `layout.tsx` | Descomentar script AdSense |
+| `Footer.tsx`, `CalculatorShell.tsx` | Descomentar slots AdSense |
+| `.env.local` | Agregar `NEXT_PUBLIC_GA_ID` y `NEXT_PUBLIC_ADSENSE_ID` |
+
+## Deploy a Vercel
+
+```bash
+npm i -g vercel
+vercel --prod
+```
+
+Variables en Vercel Dashboard:
+- `NEXT_PUBLIC_GA_ID` — GA4 Measurement ID
+- `NEXT_PUBLIC_ADSENSE_ID` — AdSense Publisher ID
+
+## Fuentes oficiales
+
+- AFIP Argentina: https://www.afip.gob.ar
+- ANSES: https://www.anses.gob.ar
