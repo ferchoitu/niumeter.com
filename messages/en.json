@@ -44,9 +44,9 @@
         "cta": "Calculate now"
       },
       "aguinaldo": {
-        "titulo": "Annual Bonus Calculator",
-        "descripcion": "Estimate your SAC based on the best salary of the semester.",
-        "cta": "Coming soon"
+        "titulo": "Annual Bonus Calculator (SAC)",
+        "descripcion": "Estimate your SAC based on the best salary of the semester. Full or proportional, with deductions.",
+        "cta": "Calculate now"
       },
       "indemnizacion": {
         "titulo": "Severance Calculator",
@@ -108,6 +108,11 @@
       "description": "Calculate your net salary in Argentina 2026. Pension, health insurance, and income tax deductions. Instant result, no registration.",
       "h1": "Argentina Net Salary Calculator 2026"
     },
+    "aguinaldoCalc": {
+      "title": "Argentina Annual Bonus (SAC) Calculator 2026 | Niumeter",
+      "description": "Calculate your net SAC in Argentina 2026. Full or proportional, with pension, health insurance, PAMI and income tax. Instant result, no registration.",
+      "h1": "Argentina Annual Bonus (SAC) Calculator 2026"
+    },
     "home": {
       "title": "Financial Calculators Argentina 2026 | Niumeter",
       "description": "Net salary, annual bonus, and severance calculators for Argentina. Updated data for 2026. No registration required."
@@ -130,7 +135,8 @@
     "inicio": "Home",
     "calculadoras": "Calculators",
     "argentina": "Argentina",
-    "sueldoNeto": "Net Salary"
+    "sueldoNeto": "Net Salary",
+    "aguinaldo": "Annual Bonus (SAC)"
   },
   "common": {
     "cargando": "Calculating...",

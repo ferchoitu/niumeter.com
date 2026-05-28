@@ -60,8 +60,8 @@ export default async function HomePage({ params }: HomePageProps) {
       description: t("cards.aguinaldo.descripcion"),
       cta: t("cards.aguinaldo.cta"),
       href: `/${locale}/calculadora-aguinaldo/argentina`,
-      available: false,
-      badge: locale === "es" ? "Próximamente" : "Coming soon",
+      available: true,
+      badge: "Disponible",
     },
     {
       id: "indemnizacion",

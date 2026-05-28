@@ -23,8 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
       changeFrequency: "monthly" as const,
     },
+    {
+      path: "/calculadora-aguinaldo/argentina",
+      priority: 0.9,
+      changeFrequency: "monthly" as const,
+    },
     // TODO: add when built:
-    // { path: "/calculadora-aguinaldo/argentina", priority: 0.9, changeFrequency: "monthly" },
     // { path: "/calculadora-indemnizacion/argentina", priority: 0.9, changeFrequency: "monthly" },
     // { path: "/calculadora-freelance/argentina", priority: 0.8, changeFrequency: "monthly" },
   ];

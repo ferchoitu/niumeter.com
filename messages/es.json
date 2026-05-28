@@ -44,9 +44,9 @@
         "cta": "Calcular ahora"
       },
       "aguinaldo": {
-        "titulo": "Calculadora de Aguinaldo",
-        "descripcion": "Estimá tu SAC según el mejor salario del semestre.",
-        "cta": "Próximamente"
+        "titulo": "Calculadora de Aguinaldo (SAC)",
+        "descripcion": "Estimá tu SAC según el mejor salario del semestre. Con descuentos y proporcional.",
+        "cta": "Calcular ahora"
       },
       "indemnizacion": {
         "titulo": "Calculadora de Indemnización",
@@ -108,6 +108,11 @@
       "description": "Calculá tu sueldo neto en Argentina 2026 con datos actualizados de ARCA. Descontás aportes, Ganancias, ves el desglose real y cobrás sin sorpresas.",
       "h1": "Calculadora de Sueldo Neto en Argentina 2026"
     },
+    "aguinaldoCalc": {
+      "title": "Calculadora de Aguinaldo (SAC) Argentina 2026 | Niumeter",
+      "description": "Calculá tu aguinaldo neto en Argentina 2026. SAC completo o proporcional, con jubilación, obra social, PAMI y Ganancias. Resultado instantáneo, sin registro.",
+      "h1": "Calculadora de Aguinaldo (SAC) Argentina 2026"
+    },
     "home": {
       "title": "Calculadoras Financieras Argentina 2026 | Niumeter",
       "description": "Calculadoras de sueldo neto, aguinaldo e indemnización para Argentina. Datos actualizados 2026. Sin registro."
@@ -130,7 +135,8 @@
     "inicio": "Inicio",
     "calculadoras": "Calculadoras",
     "argentina": "Argentina",
-    "sueldoNeto": "Sueldo Neto"
+    "sueldoNeto": "Sueldo Neto",
+    "aguinaldo": "Aguinaldo (SAC)"
   },
   "common": {
     "cargando": "Calculando...",
