@@ -49,9 +49,9 @@
         "cta": "Calcular ahora"
       },
       "indemnizacion": {
-        "titulo": "Calculadora de Indemnización",
-        "descripcion": "Conocé tus derechos ante una desvinculación.",
-        "cta": "Próximamente"
+        "titulo": "Calculadora de Indemnización por Despido",
+        "descripcion": "Calculá tu liquidación final: antigüedad, preaviso, integración y SAC según Ley 20.744.",
+        "cta": "Calcular ahora"
       },
       "freelance": {
         "titulo": "Calculadora Freelance",
@@ -104,14 +104,19 @@
   },
   "seo": {
     "argentinaCalc": {
-      "title": "Calculadora Sueldo Neto Argentina 2026 | Niumeter",
+      "title": "Calculadora Sueldo Neto Argentina 2026",
       "description": "Calculá tu sueldo neto en Argentina 2026 con datos actualizados de ARCA. Descontás aportes, Ganancias, ves el desglose real y cobrás sin sorpresas.",
       "h1": "Calculadora de Sueldo Neto en Argentina 2026"
     },
     "aguinaldoCalc": {
-      "title": "Calculadora de Aguinaldo (SAC) Argentina 2026 | Niumeter",
+      "title": "Calculadora de Aguinaldo (SAC) Argentina 2026",
       "description": "Calculá tu aguinaldo neto en Argentina 2026. SAC completo o proporcional, con jubilación, obra social, PAMI y Ganancias. Resultado instantáneo, sin registro.",
       "h1": "Calculadora de Aguinaldo (SAC) Argentina 2026"
+    },
+    "indemnizacionCalc": {
+      "title": "Calculadora Indemnización por Despido Argentina 2026",
+      "description": "Calculá tu indemnización por despido en Argentina 2026. Antigüedad, preaviso, integración y SAC proporcional según Ley 20.744.",
+      "h1": "Calculadora de Indemnización por Despido en Argentina 2026"
     },
     "home": {
       "title": "Calculadoras Financieras Argentina 2026 | Niumeter",
@@ -136,7 +141,8 @@
     "calculadoras": "Calculadoras",
     "argentina": "Argentina",
     "sueldoNeto": "Sueldo Neto",
-    "aguinaldo": "Aguinaldo (SAC)"
+    "aguinaldo": "Aguinaldo (SAC)",
+    "indemnizacion": "Indemnización"
   },
   "common": {
     "cargando": "Calculando...",

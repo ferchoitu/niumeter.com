@@ -52,6 +52,14 @@ export interface MonotributoCategoria {
   jubilacion: number;
 }
 
+export interface SmvmData {
+  vigente: number;
+  topeIndemnizacion: number;
+  fuente: string;
+  lastUpdated: string;
+  validated: boolean;
+}
+
 export interface CountryTaxData {
   year: number;
   semester: string;
@@ -65,6 +73,7 @@ export interface CountryTaxData {
   aguinaldo: {
     method: string;
   };
+  smvm: SmvmData;
   monotributo: {
     // TODO: validar categorías y montos contra ARCA — RG vigente 2026
     categorias: Record<string, MonotributoCategoria>;
@@ -134,6 +143,15 @@ const taxData: TaxDatabase = {
 
     aguinaldo: {
       method: "mejor-remuneracion-semestre / 2",
+    },
+
+    smvm: {
+      // Salario Mínimo Vital y Móvil — Resolución 9/2025, Boletín Oficial 03/12/2025
+      vigente: 367800,
+      topeIndemnizacion: 24642600, // 67 × SMVM — Art. 245 LCT
+      fuente: "Resolución 9/2025 — Boletín Oficial 03/12/2025",
+      lastUpdated: "2025-12-03",
+      validated: true,
     },
 
     monotributo: {

@@ -13,8 +13,8 @@ export default function Footer({ locale }: FooterProps) {
 
   const calculadoras = [
     { label: t("sueldoNeto") + " — Argentina", href: `/${locale}/calculadora-sueldo/argentina`, active: true },
-    { label: t("aguinaldo") + " — Argentina", href: `/${locale}/calculadora-aguinaldo/argentina`, active: false },
-    { label: t("indemnizacion") + " — Argentina", href: `/${locale}/calculadora-indemnizacion/argentina`, active: false },
+    { label: t("aguinaldo") + " — Argentina", href: `/${locale}/calculadora-aguinaldo/argentina`, active: true },
+    { label: t("indemnizacion") + " — Argentina", href: `/${locale}/calculadora-indemnizacion/argentina`, active: true },
   ];
 
   return (
@@ -85,12 +85,12 @@ export default function Footer({ locale }: FooterProps) {
               </li>
               <li>
                 <a
-                  href="https://www.afip.gob.ar"
+                  href="https://www.arca.gob.ar"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-[#10B981] transition-colors"
                 >
-                  AFIP Argentina
+                  ARCA Argentina
                   <ExternalLink className="h-3 w-3" />
                 </a>
               </li>

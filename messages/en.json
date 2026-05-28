@@ -49,9 +49,9 @@
         "cta": "Calculate now"
       },
       "indemnizacion": {
-        "titulo": "Severance Calculator",
-        "descripcion": "Know your rights in case of dismissal.",
-        "cta": "Coming soon"
+        "titulo": "Severance Pay Calculator",
+        "descripcion": "Calculate your final settlement: seniority, notice, integration and SAC under Law 20.744.",
+        "cta": "Calculate now"
       },
       "freelance": {
         "titulo": "Freelance Calculator",
@@ -104,14 +104,19 @@
   },
   "seo": {
     "argentinaCalc": {
-      "title": "Argentina Net Salary Calculator 2026 | Niumeter",
+      "title": "Argentina Net Salary Calculator 2026",
       "description": "Calculate your net salary in Argentina 2026. Pension, health insurance, and income tax deductions. Instant result, no registration.",
       "h1": "Argentina Net Salary Calculator 2026"
     },
     "aguinaldoCalc": {
-      "title": "Argentina Annual Bonus (SAC) Calculator 2026 | Niumeter",
+      "title": "Argentina Annual Bonus (SAC) Calculator 2026",
       "description": "Calculate your net SAC in Argentina 2026. Full or proportional, with pension, health insurance, PAMI and income tax. Instant result, no registration.",
       "h1": "Argentina Annual Bonus (SAC) Calculator 2026"
+    },
+    "indemnizacionCalc": {
+      "title": "Argentina Severance Pay Calculator 2026",
+      "description": "Calculate your severance pay in Argentina 2026. Seniority, notice, integration and proportional SAC under Law 20.744.",
+      "h1": "Argentina Severance Pay Calculator 2026"
     },
     "home": {
       "title": "Financial Calculators Argentina 2026 | Niumeter",
@@ -136,7 +141,8 @@
     "calculadoras": "Calculators",
     "argentina": "Argentina",
     "sueldoNeto": "Net Salary",
-    "aguinaldo": "Annual Bonus (SAC)"
+    "aguinaldo": "Annual Bonus (SAC)",
+    "indemnizacion": "Severance Pay"
   },
   "common": {
     "cargando": "Calculating...",

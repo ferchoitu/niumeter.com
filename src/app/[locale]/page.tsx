@@ -70,8 +70,8 @@ export default async function HomePage({ params }: HomePageProps) {
       description: t("cards.indemnizacion.descripcion"),
       cta: t("cards.indemnizacion.cta"),
       href: `/${locale}/calculadora-indemnizacion/argentina`,
-      available: false,
-      badge: locale === "es" ? "Próximamente" : "Coming soon",
+      available: true,
+      badge: "Disponible",
     },
     {
       id: "freelance",
