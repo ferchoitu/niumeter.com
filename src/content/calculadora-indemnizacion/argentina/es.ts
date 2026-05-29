@@ -1,52 +1,51 @@
 /**
  * Contenido editorial SEO — Calculadora de Indemnización Argentina (es)
- * Las secciones marcadas con [CONTENIDO PENDIENTE] serán reemplazadas por el owner.
  */
 export const content = {
   intro: {
-    h2: "Cómo se calcula la indemnización por despido en Argentina",
-    p1: "[CONTENIDO PENDIENTE] — Explicación de los conceptos principales de la liquidación final según la Ley 20.744.",
-    p2: "[CONTENIDO PENDIENTE] — Detalle del Art. 245 LCT y cómo se aplica en 2026.",
-    p3: "[CONTENIDO PENDIENTE] — Qué documentos pedir al empleador y en qué plazos.",
+    h2: "Calculá tu indemnización por despido online",
+    p1: "La legislación laboral argentina contempla distintas compensaciones económicas cuando un trabajador es despedido sin causa. Sin embargo, determinar el monto correcto puede resultar complicado porque intervienen múltiples variables y cada situación tiene particularidades propias.",
+    p2: "Por eso desarrollamos esta calculadora, pensada para trabajadores, empleadores, abogados laboralistas y profesionales de recursos humanos que necesitan una referencia rápida y confiable.",
+    p3: "El resultado obtenido es orientativo y no reemplaza el asesoramiento profesional ni una liquidación formal. Siempre es recomendable consultar con un especialista cuando existan dudas sobre montos, registración laboral o posibles incumplimientos.",
   },
 
   conceptos: {
     h2: "Qué conceptos incluye una liquidación final",
-    intro: "[CONTENIDO PENDIENTE] — Descripción de cada concepto: antigüedad, preaviso, integración, SAC y vacaciones.",
+    intro: "El cálculo de la indemnización depende de varios conceptos que se suman para obtener el monto final. A continuación detallamos cada uno de ellos según la normativa vigente.",
     items: [
       {
         label: "Indemnización por antigüedad (Art. 245 LCT)",
-        desc: "[CONTENIDO PENDIENTE] — Fórmula: mejor remuneración × años de antigüedad. Tope: 67 × SMVM ($24.642.600 en 2026).",
+        desc: "Es el concepto más importante. Corresponde un sueldo por cada año trabajado o fracción mayor a tres meses, tomando como base la mejor remuneración mensual, normal y habitual. Tope: 67 × SMVM ($24.642.600 en 2026).",
       },
       {
         label: "Preaviso (Art. 231-232 LCT)",
-        desc: "[CONTENIDO PENDIENTE] — 15 días si tenés menos de 3 meses, 1 mes entre 3 meses y 5 años, 2 meses si tenés más de 5 años.",
+        desc: "Si el empleador no otorga el preaviso legal, debe abonarlo económicamente. Los plazos son: 1 mes para trabajadores con menos de 5 años de antigüedad, y 2 meses para quienes tengan más de 5 años.",
       },
       {
         label: "Integración mes de despido (Art. 233 LCT)",
-        desc: "[CONTENIDO PENDIENTE] — Los días que faltan hasta fin del mes a razón de sueldo diario ($sueldo / 30).",
+        desc: "Cuando el despido se comunica antes de finalizar el mes, corresponde abonar los días faltantes hasta completarlo. Se calculan a razón de sueldo diario (sueldo / 30).",
       },
       {
-        label: "SAC proporcional sobre preaviso",
-        desc: "[CONTENIDO PENDIENTE] — El aguinaldo proporcional calculado sobre el período de preaviso.",
+        label: "SAC proporcional",
+        desc: "También corresponde percibir el Sueldo Anual Complementario proporcional generado hasta la fecha de desvinculación, incluyendo el SAC sobre el período de preaviso.",
       },
       {
         label: "Vacaciones proporcionales (Art. 150 LCT)",
-        desc: "[CONTENIDO PENDIENTE] — Los días de vacaciones que no gozaste en el año en curso.",
+        desc: "Las vacaciones pendientes deben liquidarse proporcionalmente según el tiempo trabajado durante el año en curso. Los días de vacaciones no gozadas se abonan con un incremento del 100%.",
       },
     ],
   },
 
   tope: {
     h2: "El tope de indemnización: qué es y cuándo aplica",
-    p1: "[CONTENIDO PENDIENTE] — Explicación del tope del Art. 245: la base de cálculo no puede superar 67 × SMVM.",
+    p1: "Por Art. 245 LCT, la base de cálculo (la mejor remuneración mensual) no puede superar 67 veces el Salario Mínimo Vital y Móvil. Este tope aplica a la base de cálculo, no al total de la liquidación.",
     p2: "El SMVM vigente a junio 2026 es $367.800 (Resolución 9/2025 — Boletín Oficial 03/12/2025). El tope es $24.642.600.",
-    p3: "[CONTENIDO PENDIENTE] — Ejemplos de cuándo aplica el tope y cómo impacta en salarios altos.",
+    p3: "Si tu sueldo supera ese monto, la indemnización se calcula sobre $24.642.600 y no sobre tu remuneración real. Ante cualquier duda sobre cómo aplica el tope a tu caso particular, conviene revisar con un profesional.",
   },
 
   tipos: {
     h2: "Diferencias entre renuncia, despido sin causa y despido con causa",
-    p1: "[CONTENIDO PENDIENTE] — Comparativa clara entre los tres escenarios y qué cobra el trabajador en cada caso.",
+    p1: "Cuando existe una causa grave atribuible al trabajador y debidamente acreditada, el empleador puede despedir sin obligación de pagar la indemnización por antigüedad. En el despido sin causa, en cambio, corresponde el pago de todas las indemnizaciones previstas. La renuncia solo da derecho a vacaciones proporcionales y SAC del período.",
     tabla: [
       { concepto: "Indemnización por antigüedad", sinCausa: "✅ Sí", conCausa: "❌ No", renuncia: "❌ No" },
       { concepto: "Preaviso", sinCausa: "✅ Sí", conCausa: "❌ No", renuncia: "❌ No" },
@@ -57,9 +56,9 @@ export const content = {
   },
 
   plazos: {
-    h2: "Cuánto tiempo tiene el empleador para pagar",
-    p1: "[CONTENIDO PENDIENTE] — Art. 128 LCT: 4 días hábiles para liquidar. Intereses y multas por mora.",
-    p2: "[CONTENIDO PENDIENTE] — Qué hacer si el empleador no paga en término.",
+    h2: "Factores que pueden modificar el monto de la indemnización",
+    p1: "No todos los casos son iguales. Las horas extras y comisiones, cuando forman parte habitual de la remuneración, pueden influir en la base salarial utilizada para calcular determinadas indemnizaciones. El trabajo parcialmente registrado también puede generar diferencias que requieren análisis profesional.",
+    p2: "Algunas actividades poseen convenios colectivos con reglas específicas que pueden impactar en determinados conceptos indemnizatorios. Ante cualquiera de estas circunstancias particulares, una calculadora es una excelente referencia inicial, pero siempre conviene complementarla con asesoramiento de un especialista.",
   },
 
   faq: {
