@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sora, DM_Sans } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -10,20 +10,11 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "@/app/globals.css";
 
-const sora = Sora({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-sora",
+  variable: "--font-montserrat",
   display: "swap",
   preload: true,
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
-  preload: true,
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 const locales = ["es", "en"] as const;
@@ -107,7 +98,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html lang={locale} className={montserrat.variable} suppressHydrationWarning>
       <head>
         {/* hreflang tags */}
         <link rel="alternate" hrefLang="es" href="https://niumeter.com/es" />
@@ -144,7 +135,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         />
         */}
       </head>
-      <body className={`${sora.variable} ${dmSans.variable} antialiased min-h-screen flex flex-col`}>
+      <body className={`${montserrat.variable} antialiased min-h-screen flex flex-col`}>
         <NextIntlClientProvider messages={messages}>
           <TooltipProvider>
             <Header locale={locale} />

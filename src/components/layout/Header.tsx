@@ -30,14 +30,14 @@ export default function Header({ locale }: HeaderProps) {
       disabled: false,
     },
     {
-      label: t("aguinaldo"),
-      href: "#",
-      disabled: true,
+      label: `${t("argentina")} — ${t("aguinaldo")}`,
+      href: `/${locale}/calculadora-aguinaldo/argentina`,
+      disabled: false,
     },
     {
-      label: t("indemnizacion"),
-      href: "#",
-      disabled: true,
+      label: `${t("argentina")} — ${t("indemnizacion")}`,
+      href: `/${locale}/calculadora-indemnizacion/argentina`,
+      disabled: false,
     },
   ];
 
@@ -48,20 +48,20 @@ export default function Header({ locale }: HeaderProps) {
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
             <Link href={`/${locale}`} className="flex items-center gap-2 group">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#10B981] text-white transition-transform group-hover:scale-105">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-transform group-hover:scale-105">
                 <Gauge className="h-5 w-5" strokeWidth={2.5} />
               </div>
-              <span className="text-xl font-bold tracking-tight text-foreground">Niumeter</span>
+              <span className="text-xl font-bold tracking-tight text-zinc-950">Niumeter</span>
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-1" aria-label="Navegación principal">
+            <nav className="hidden md:flex items-center gap-4" aria-label="Navegación principal">
               {/* Calculadoras dropdown */}
               <div className="relative">
                 <button
                   onClick={() => { setCalcOpen((v) => !v); setLangOpen(false); }}
                   onBlur={() => setTimeout(() => setCalcOpen(false), 150)}
-                  className="inline-flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium hover:bg-muted transition-colors"
+                  className="inline-flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-zinc-800 hover:text-black hover:bg-muted transition-colors"
                   aria-expanded={calcOpen}
                   aria-haspopup="true"
                 >
@@ -69,7 +69,7 @@ export default function Header({ locale }: HeaderProps) {
                   <ChevronDown className={`h-3.5 w-3.5 opacity-60 transition-transform ${calcOpen ? "rotate-180" : ""}`} />
                 </button>
                 {calcOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-72 bg-white border border-border rounded-xl shadow-lg py-1 z-50">
+                  <div className="absolute top-full left-0 mt-1 w-72 bg-white border border-border rounded-xl shadow-lg py-1 z-50 backdrop-blur-md">
                     {navLinks.map((link) =>
                       link.disabled ? (
                         <div
@@ -84,7 +84,7 @@ export default function Header({ locale }: HeaderProps) {
                           key={link.href}
                           href={link.href}
                           onClick={() => setCalcOpen(false)}
-                          className="block px-4 py-2.5 text-sm hover:bg-muted transition-colors"
+                          className="block px-4 py-2.5 text-sm text-zinc-700 hover:text-black hover:bg-muted transition-colors"
                         >
                           {link.label}
                         </Link>
@@ -93,6 +93,18 @@ export default function Header({ locale }: HeaderProps) {
                   </div>
                 )}
               </div>
+
+              {/* Cyber styled CTA */}
+              <Link
+                href={`/${locale}/calculadora-sueldo/argentina`}
+                className="relative hidden lg:inline-flex items-center justify-center px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary hover:text-white hover:neon-glow transition-all duration-200"
+              >
+                <span className="cyber-corner cyber-corner-tl" />
+                <span className="cyber-corner cyber-corner-tr" />
+                <span className="cyber-corner cyber-corner-bl" />
+                <span className="cyber-corner cyber-corner-br" />
+                {t("sueldoNeto")}
+              </Link>
             </nav>
 
             {/* Right: Language switcher + mobile */}
@@ -102,7 +114,7 @@ export default function Header({ locale }: HeaderProps) {
                 <button
                   onClick={() => { setLangOpen((v) => !v); setCalcOpen(false); }}
                   onBlur={() => setTimeout(() => setLangOpen(false), 150)}
-                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium hover:bg-muted transition-colors"
+                  className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-zinc-800 hover:text-black hover:bg-muted transition-colors"
                   aria-label={t("idioma")}
                   aria-expanded={langOpen}
                   aria-haspopup="true"
@@ -111,24 +123,24 @@ export default function Header({ locale }: HeaderProps) {
                   <span className="uppercase font-semibold">{locale}</span>
                 </button>
                 {langOpen && (
-                  <div className="absolute top-full right-0 mt-1 w-40 bg-white border border-border rounded-xl shadow-lg py-1 z-50">
+                  <div className="absolute top-full right-0 mt-1 w-40 bg-white border border-border rounded-xl shadow-lg py-1 z-50 backdrop-blur-md">
                     <Link
                       href={getAlternateUrl("es")}
                       hrefLang="es"
                       onClick={() => setLangOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-muted transition-colors"
+                      className="flex items-center gap-2 px-4 py-2.5 text-sm text-zinc-700 hover:text-black hover:bg-muted transition-colors"
                     >
                       🇦🇷 Español
-                      {locale === "es" && <span className="ml-auto text-[#10B981] text-xs">✓</span>}
+                      {locale === "es" && <span className="ml-auto text-primary text-xs">✓</span>}
                     </Link>
                     <Link
                       href={getAlternateUrl("en")}
                       hrefLang="en"
                       onClick={() => setLangOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2.5 text-sm hover:bg-muted transition-colors"
+                      className="flex items-center gap-2 px-4 py-2.5 text-sm text-zinc-700 hover:text-black hover:bg-muted transition-colors"
                     >
                       🇺🇸 English
-                      {locale === "en" && <span className="ml-auto text-[#10B981] text-xs">✓</span>}
+                      {locale === "en" && <span className="ml-auto text-primary text-xs">✓</span>}
                     </Link>
                   </div>
                 )}
@@ -156,15 +168,15 @@ export default function Header({ locale }: HeaderProps) {
         >
           <div className="absolute inset-0 bg-black/30" aria-hidden="true" />
           <nav
-            className="absolute top-16 right-0 bottom-0 w-80 bg-white border-l border-border shadow-xl p-6 overflow-y-auto"
+            className="absolute top-16 right-0 bottom-0 w-80 bg-background border-l border-border shadow-xl p-6 overflow-y-auto"
             aria-label="Navegación móvil"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center gap-2 mb-8">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#10B981] text-white">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                 <Gauge className="h-5 w-5" strokeWidth={2.5} />
               </div>
-              <span className="text-xl font-bold">Niumeter</span>
+              <span className="text-xl font-bold text-zinc-950">Niumeter</span>
             </div>
 
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">
@@ -182,7 +194,7 @@ export default function Header({ locale }: HeaderProps) {
                     <Link
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="flex rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent transition-colors"
+                      className="flex rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 hover:text-black hover:bg-accent transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -199,19 +211,19 @@ export default function Header({ locale }: HeaderProps) {
                 href={getAlternateUrl("es")}
                 hrefLang="es"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent transition-colors"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 hover:text-black hover:bg-accent transition-colors"
               >
                 🇦🇷 Español
-                {locale === "es" && <span className="ml-auto text-[#10B981] text-xs">Activo</span>}
+                {locale === "es" && <span className="ml-auto text-primary text-xs">Activo</span>}
               </Link>
               <Link
                 href={getAlternateUrl("en")}
                 hrefLang="en"
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium hover:bg-accent transition-colors"
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-zinc-700 hover:text-black hover:bg-accent transition-colors"
               >
                 🇺🇸 English
-                {locale === "en" && <span className="ml-auto text-[#10B981] text-xs">Active</span>}
+                {locale === "en" && <span className="ml-auto text-primary text-xs">Active</span>}
               </Link>
             </div>
           </nav>

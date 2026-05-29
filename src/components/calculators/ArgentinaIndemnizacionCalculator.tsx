@@ -162,15 +162,18 @@ export default function ArgentinaIndemnizacionCalculator() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start">
       {/* ===== INPUTS ===== */}
-      <Card className="lg:col-span-2 border border-border/60 shadow-sm">
-        <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Scale className="h-5 w-5 text-[#10B981]" />
-            Ingresá tus datos
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-5">
+      <div className="lg:col-span-2 relative glass-panel p-6 rounded-xl border border-border/40">
+        <span className="cyber-corner cyber-corner-tl" />
+        <span className="cyber-corner cyber-corner-tr" />
+        <span className="cyber-corner cyber-corner-bl" />
+        <span className="cyber-corner cyber-corner-br" />
 
+        <div className="flex items-center gap-2 text-lg font-bold mb-5 border-b border-border/40 pb-3">
+          <Scale className="h-5 w-5 text-primary" />
+          Ingresá tus datos
+        </div>
+
+        <div className="space-y-5">
           {/* Mejor remuneración */}
           <div className="space-y-1.5">
             <div className="flex items-center gap-1.5">
@@ -192,7 +195,7 @@ export default function ArgentinaIndemnizacionCalculator() {
                 id="mejorRemuneracion"
                 inputMode="numeric"
                 placeholder="Ej: 2.000.000"
-                className="pl-7 tabular-nums text-base font-medium focus-brand"
+                className="pl-7 tabular-nums text-base font-medium focus-brand bg-zinc-50 border-border/40"
                 {...register("mejorRemuneracion", {
                   onChange: (e) => setValue("mejorRemuneracion", formatInputValue(e.target.value)),
                 })}
@@ -212,7 +215,7 @@ export default function ArgentinaIndemnizacionCalculator() {
               <Input
                 id="fechaIngreso"
                 type="date"
-                className="text-sm focus-brand"
+                className="text-sm focus-brand bg-zinc-50 border-border/40 text-foreground [color-scheme:light]"
                 {...register("fechaIngreso")}
               />
               {errors.fechaIngreso && (
@@ -226,7 +229,7 @@ export default function ArgentinaIndemnizacionCalculator() {
               <Input
                 id="fechaDespido"
                 type="date"
-                className="text-sm focus-brand"
+                className="text-sm focus-brand bg-zinc-50 border-border/40 text-foreground [color-scheme:light]"
                 {...register("fechaDespido")}
               />
             </div>
@@ -249,11 +252,11 @@ export default function ArgentinaIndemnizacionCalculator() {
                     onClick={() => setValue("tipoDespido", tipo)}
                     className={`text-left px-4 py-3 rounded-lg border transition-all duration-150 ${
                       tipoDespido === tipo
-                        ? "bg-[#10B981]/10 border-[#10B981] text-foreground"
-                        : "border-border bg-background hover:border-[#10B981]/40"
+                        ? "bg-primary/10 border-primary text-foreground"
+                        : "border-border/40 bg-card hover:border-primary/40 text-foreground"
                     }`}
                   >
-                    <p className={`text-sm font-semibold ${tipoDespido === tipo ? "text-[#10B981]" : ""}`}>
+                    <p className={`text-sm font-semibold ${tipoDespido === tipo ? "text-primary" : ""}`}>
                       {labels[tipo].label}
                     </p>
                     <p className="text-xs text-muted-foreground">{labels[tipo].desc}</p>
@@ -265,7 +268,7 @@ export default function ArgentinaIndemnizacionCalculator() {
 
           {/* Preaviso — solo si es sin causa */}
           {esSinCausa && (
-            <div className="space-y-3 rounded-lg border border-border p-3 bg-muted/20 animate-in slide-in-from-top-1 duration-200">
+            <div className="space-y-3 rounded-lg border border-border/40 p-3 bg-zinc-50/50 animate-in slide-in-from-top-1 duration-200">
               <p className="text-sm font-medium text-foreground">Preaviso</p>
               <div className="flex items-center justify-between">
                 <Label htmlFor="pravisoTrabajado" className="text-sm cursor-pointer">
@@ -294,29 +297,33 @@ export default function ArgentinaIndemnizacionCalculator() {
 
           {/* Compartir */}
           {result && (
-            <Button variant="outline" className="w-full gap-2 mt-2" onClick={handleShare}>
+            <Button
+              variant="outline"
+              className="w-full gap-2 mt-2 border-primary/20 hover:border-primary/50 text-primary hover:text-primary-foreground hover:bg-primary/10 transition-colors"
+              onClick={handleShare}
+            >
               {copied ? (
-                <><Check className="h-4 w-4 text-[#10B981]" />¡Link copiado!</>
+                <><Check className="h-4 w-4 text-primary" />¡Link copiado!</>
               ) : (
                 <><Share2 className="h-4 w-4" />Compartir este cálculo</>
               )}
             </Button>
           )}
 
-          <p className="text-xs text-muted-foreground leading-relaxed border-t border-border pt-3">
+          <p className="text-xs text-muted-foreground leading-relaxed border-t border-border/40 pt-3">
             ⚠️ Cálculo estimativo — Art. 245 Ley 20.744. No reemplaza asesoramiento legal. SMVM: $367.800 (Res. 9/2025).
           </p>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       {/* ===== RESULTADOS ===== */}
       <div className="lg:col-span-3 space-y-5">
         {result ? (
           <IndemnizacionResults result={result} />
         ) : (
-          <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-muted/20 min-h-[400px] text-center p-8">
-            <div className="w-12 h-12 rounded-full bg-[#10B981]/10 flex items-center justify-center mb-4">
-              <Scale className="h-6 w-6 text-[#10B981]" />
+          <div className="relative flex flex-col items-center justify-center rounded-xl border border-dashed border-border/40 bg-card/40 min-h-[400px] text-center p-8">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <Scale className="h-6 w-6 text-primary" />
             </div>
             <p className="text-base font-medium text-foreground">Ingresá tus datos</p>
             <p className="mt-1 text-sm text-muted-foreground">

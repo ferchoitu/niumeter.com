@@ -172,15 +172,18 @@ export default function ArgentinaAguinaldoCalculator() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start">
       {/* ===== INPUTS PANEL ===== */}
-      <Card className="lg:col-span-2 border border-border/60 shadow-sm">
-        <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Gift className="h-5 w-5 text-[#10B981]" />
-            Ingresá tus datos
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-5">
+      <div className="lg:col-span-2 relative glass-panel p-6 rounded-xl border border-border/40">
+        <span className="cyber-corner cyber-corner-tl" />
+        <span className="cyber-corner cyber-corner-tr" />
+        <span className="cyber-corner cyber-corner-bl" />
+        <span className="cyber-corner cyber-corner-br" />
 
+        <div className="flex items-center gap-2 text-lg font-bold mb-5 border-b border-border/40 pb-3">
+          <Gift className="h-5 w-5 text-primary" />
+          Ingresá tus datos
+        </div>
+
+        <div className="space-y-5">
           {/* Mejor remuneración */}
           <div className="space-y-1.5">
             <div className="flex items-center gap-1.5">
@@ -204,7 +207,7 @@ export default function ArgentinaAguinaldoCalculator() {
                 id="mejorRemuneracion"
                 inputMode="numeric"
                 placeholder="Ej: 1.500.000"
-                className="pl-7 tabular-nums text-base font-medium focus-brand"
+                className="pl-7 tabular-nums text-base font-medium focus-brand bg-zinc-50 border-border/40"
                 {...register("mejorRemuneracion", {
                   onChange: (e) => {
                     setValue("mejorRemuneracion", formatInputValue(e.target.value));
@@ -240,8 +243,8 @@ export default function ArgentinaAguinaldoCalculator() {
                   onClick={() => setValue("mesesTrabajados", m.toString())}
                   className={`rounded-lg border py-2 text-sm font-semibold transition-all duration-150 ${
                     mesesTrabajados === m.toString()
-                      ? "bg-[#10B981] border-[#10B981] text-white shadow-sm"
-                      : "border-border bg-background hover:border-[#10B981]/50 hover:bg-[#10B981]/5"
+                      ? "bg-primary border-primary text-black font-bold shadow-sm"
+                      : "border-border/40 bg-card hover:border-primary/50 hover:bg-primary/5 text-foreground"
                   }`}
                 >
                   {m}
@@ -279,7 +282,7 @@ export default function ArgentinaAguinaldoCalculator() {
                 id="sueldoBrutoMensual"
                 inputMode="numeric"
                 placeholder="Ej: 1.200.000"
-                className="pl-7 tabular-nums text-base focus-brand"
+                className="pl-7 tabular-nums text-base focus-brand bg-zinc-50 border-border/40"
                 {...register("sueldoBrutoMensual", {
                   onChange: (e) => {
                     setValue("sueldoBrutoMensual", formatInputValue(e.target.value));
@@ -290,7 +293,7 @@ export default function ArgentinaAguinaldoCalculator() {
           </div>
 
           {/* Convenio colectivo */}
-          <div className="flex items-center justify-between rounded-lg border border-border p-3 bg-muted/30">
+          <div className="flex items-center justify-between rounded-lg border border-border/40 p-3 bg-zinc-50">
             <div className="flex items-center gap-2">
               <Label htmlFor="tieneConvenio" className="text-sm font-medium cursor-pointer">
                 ¿Estás en convenio colectivo?
@@ -326,7 +329,7 @@ export default function ArgentinaAguinaldoCalculator() {
                   min="0"
                   max="10"
                   placeholder="Ej: 2"
-                  className="pr-8 text-base focus-brand"
+                  className="pr-8 text-base focus-brand bg-zinc-50 border-border/40"
                   {...register("aporteGremial")}
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
@@ -337,7 +340,7 @@ export default function ArgentinaAguinaldoCalculator() {
           )}
 
           {/* Deducciones familiares (para Ganancias) */}
-          <div className="space-y-3 rounded-lg border border-border p-3 bg-muted/20">
+          <div className="space-y-3 rounded-lg border border-border/40 p-3 bg-zinc-50/50">
             <p className="text-sm font-medium text-foreground">Deducciones familiares (Ganancias)</p>
             <div className="flex items-center justify-between">
               <Label htmlFor="tieneConyuge" className="text-sm cursor-pointer">
@@ -360,7 +363,7 @@ export default function ArgentinaAguinaldoCalculator() {
                 inputMode="numeric"
                 min="0"
                 max="20"
-                className="w-20 text-center text-base focus-brand"
+                className="w-20 text-center text-base focus-brand bg-zinc-50 border-border/40"
                 {...register("cantidadHijos")}
               />
             </div>
@@ -370,12 +373,12 @@ export default function ArgentinaAguinaldoCalculator() {
           {result && (
             <Button
               variant="outline"
-              className="w-full gap-2 mt-2"
+              className="w-full gap-2 mt-2 border-primary/20 hover:border-primary/50 text-primary hover:text-primary-foreground hover:bg-primary/10 transition-colors"
               onClick={handleShare}
             >
               {copied ? (
                 <>
-                  <Check className="h-4 w-4 text-[#10B981]" />
+                  <Check className="h-4 w-4 text-primary" />
                   ¡Link copiado!
                 </>
               ) : (
@@ -387,20 +390,20 @@ export default function ArgentinaAguinaldoCalculator() {
             </Button>
           )}
 
-          <p className="text-xs text-muted-foreground leading-relaxed border-t border-border pt-3">
+          <p className="text-xs text-muted-foreground leading-relaxed border-t border-border/40 pt-3">
             ⚠️ Cálculo estimativo basado en Art. 121-122 LCT. Verificá siempre con tu liquidador de sueldos.
           </p>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       {/* ===== RESULTS PANEL ===== */}
       <div className="lg:col-span-3 space-y-5">
         {result ? (
           <AguinaldoResults result={result} />
         ) : (
-          <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-muted/20 min-h-[400px] text-center p-8">
-            <div className="w-12 h-12 rounded-full bg-[#10B981]/10 flex items-center justify-center mb-4">
-              <Gift className="h-6 w-6 text-[#10B981]" />
+          <div className="relative flex flex-col items-center justify-center rounded-xl border border-dashed border-border/40 bg-card/40 min-h-[400px] text-center p-8">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <Gift className="h-6 w-6 text-primary" />
             </div>
             <p className="text-base font-medium text-foreground">
               Ingresá la mejor remuneración del semestre

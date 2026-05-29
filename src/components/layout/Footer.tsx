@@ -18,14 +18,14 @@ export default function Footer({ locale }: FooterProps) {
   ];
 
   return (
-    <footer className="border-t border-border bg-white" aria-label="Pie de página">
+    <footer className="border-t border-border/40 bg-zinc-50" aria-label="Pie de página">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main footer grid */}
         <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand column */}
           <div className="md:col-span-2">
             <Link href={`/${locale}`} className="flex items-center gap-2 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#10B981] text-white">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
                 <Gauge className="h-5 w-5" strokeWidth={2.5} />
               </div>
               <span className="text-xl font-bold">Niumeter</span>
@@ -47,7 +47,7 @@ export default function Footer({ locale }: FooterProps) {
                   {calc.active ? (
                     <Link
                       href={calc.href}
-                      className="text-sm text-muted-foreground hover:text-[#10B981] transition-colors"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
                     >
                       {calc.label}
                     </Link>
@@ -70,7 +70,7 @@ export default function Footer({ locale }: FooterProps) {
                 {/* TODO: crear páginas legales reales */}
                 <Link
                   href={`/${locale}/privacy`}
-                  className="text-sm text-muted-foreground hover:text-[#10B981] transition-colors"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {t("privacyPolicy")}
                 </Link>
@@ -78,7 +78,7 @@ export default function Footer({ locale }: FooterProps) {
               <li>
                 <Link
                   href={`/${locale}/terms`}
-                  className="text-sm text-muted-foreground hover:text-[#10B981] transition-colors"
+                  className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {t("terms")}
                 </Link>
@@ -88,7 +88,7 @@ export default function Footer({ locale }: FooterProps) {
                   href="https://www.arca.gob.ar"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-[#10B981] transition-colors"
+                  className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   ARCA Argentina
                   <ExternalLink className="h-3 w-3" />

@@ -11,12 +11,12 @@ interface SalaryChartProps {
 
 const CHART_COLORS = [
   "#10B981", // emerald — neto
-  "#1E3A8A", // navy — jubilación
-  "#60a5fa", // blue — obra social
-  "#34d399", // green — ley 19032
+  "#3b82f6", // blue — jubilación
+  "#60a5fa", // light blue — obra social
+  "#00d2c4", // teal — ley 19032
   "#f59e0b", // amber — ganancias
-  "#8b5cf6", // purple — gremial
-  "#ef4444", // red — adicional
+  "#a855f7", // purple — gremial
+  "#f43f5e", // rose — adicional
 ];
 
 interface CustomTooltipProps {
@@ -32,9 +32,9 @@ function CustomTooltip({ active, payload }: CustomTooltipProps) {
   if (active && payload && payload.length) {
     const item = payload[0];
     return (
-      <div className="bg-white border border-border rounded-xl shadow-lg px-3 py-2 text-sm">
+      <div className="bg-white border border-border/60 rounded-xl shadow-lg px-3 py-2 text-sm">
         <p className="font-semibold text-foreground">{item.name}</p>
-        <p className="tabular-nums text-[#10B981]">{formatARS(item.value)}</p>
+        <p className="tabular-nums text-primary font-bold">{formatARS(item.value)}</p>
         <p className="text-muted-foreground text-xs">{item.payload.pct.toFixed(1)}% del bruto</p>
       </div>
     );
@@ -81,11 +81,16 @@ export default function SalaryChart({ result }: SalaryChartProps) {
   ];
 
   return (
-    <Card className="border border-border/60 shadow-sm">
-      <CardHeader className="pb-2">
-        <CardTitle className="text-base">{t("graficaTitulo")}</CardTitle>
-      </CardHeader>
-      <CardContent>
+    <div className="relative glass-panel rounded-xl border border-border/40">
+      <span className="cyber-corner cyber-corner-tl" />
+      <span className="cyber-corner cyber-corner-tr" />
+      <span className="cyber-corner cyber-corner-bl" />
+      <span className="cyber-corner cyber-corner-br" />
+
+      <div className="p-4 border-b border-border/40">
+        <h3 className="text-sm font-bold text-foreground">{t("graficaTitulo")}</h3>
+      </div>
+      <div className="p-6">
         {/* Fixed height container prevents CLS */}
         <div style={{ height: 280 }}>
           <ResponsiveContainer width="100%" height="100%">
@@ -115,7 +120,7 @@ export default function SalaryChart({ result }: SalaryChartProps) {
             </PieChart>
           </ResponsiveContainer>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

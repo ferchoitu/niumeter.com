@@ -28,10 +28,10 @@ export default function CalculatorShell({
   return (
     <section className="w-full" aria-labelledby="calculator-title">
       {/* Calculator header */}
-      <div className="bg-gradient-to-br from-[#10B981]/10 via-white to-[#1E3A8A]/5 border-b border-border">
+      <div className="bg-gradient-to-b from-zinc-50/50 to-white border-b border-border/40">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 md:py-12">
           {badge && (
-            <span className="inline-flex items-center rounded-full bg-[#10B981]/10 px-3 py-1 text-sm font-medium text-[#10B981] ring-1 ring-[#10B981]/20 mb-4">
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary ring-1 ring-primary/20 mb-4">
               {badge}
             </span>
           )}

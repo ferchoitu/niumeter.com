@@ -169,14 +169,18 @@ export default function ArgentinaSalaryCalculator() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-8 items-start">
       {/* ===== INPUTS PANEL ===== */}
-      <Card className="lg:col-span-2 border border-border/60 shadow-sm">
-        <CardHeader className="pb-4">
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <Calculator className="h-5 w-5 text-[#10B981]" />
-            Ingresá tus datos
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-5">
+      <div className="lg:col-span-2 relative glass-panel p-6 rounded-xl border border-border/40">
+        <span className="cyber-corner cyber-corner-tl" />
+        <span className="cyber-corner cyber-corner-tr" />
+        <span className="cyber-corner cyber-corner-bl" />
+        <span className="cyber-corner cyber-corner-br" />
+
+        <div className="flex items-center gap-2 text-lg font-bold mb-5 border-b border-border/40 pb-3">
+          <Calculator className="h-5 w-5 text-primary" />
+          Ingresá tus datos
+        </div>
+
+        <div className="space-y-5">
           {/* Sueldo Bruto */}
           <div className="space-y-1.5">
             <Label htmlFor="sueldoBruto" className="text-sm font-medium">
@@ -190,7 +194,7 @@ export default function ArgentinaSalaryCalculator() {
                 id="sueldoBruto"
                 inputMode="numeric"
                 placeholder={t("inputs.sueldoBrutoPlaceholder")}
-                className="pl-7 tabular-nums text-base font-medium focus-brand"
+                className="pl-7 tabular-nums text-base font-medium focus-brand bg-zinc-50 border-border/40"
                 {...register("sueldoBruto", {
                   onChange: (e) => {
                     const formatted = formatInputValue(e.target.value);
@@ -205,7 +209,7 @@ export default function ArgentinaSalaryCalculator() {
           </div>
 
           {/* Convenio colectivo */}
-          <div className="flex items-center justify-between rounded-lg border border-border p-3 bg-muted/30">
+          <div className="flex items-center justify-between rounded-lg border border-border/40 p-3 bg-zinc-50">
             <div className="flex items-center gap-2">
               <Label htmlFor="tieneConvenio" className="text-sm font-medium cursor-pointer">
                 {t("inputs.convenio")}
@@ -242,7 +246,7 @@ export default function ArgentinaSalaryCalculator() {
                   min="0"
                   max="10"
                   placeholder={t("inputs.aporteGremialPlaceholder")}
-                  className="pr-8 text-base focus-brand"
+                  className="pr-8 text-base focus-brand bg-zinc-50 border-border/40"
                   {...register("aporteGremial")}
                 />
                 <span className="absolute right-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground">
@@ -253,7 +257,7 @@ export default function ArgentinaSalaryCalculator() {
           )}
 
           {/* Deducciones familiares */}
-          <div className="space-y-3 rounded-lg border border-border p-3 bg-muted/20">
+          <div className="space-y-3 rounded-lg border border-border/40 p-3 bg-zinc-50/50">
             <p className="text-sm font-medium text-foreground">Deducciones familiares</p>
 
             <div className="flex items-center justify-between">
@@ -278,7 +282,7 @@ export default function ArgentinaSalaryCalculator() {
                 inputMode="numeric"
                 min="0"
                 max="20"
-                className="w-20 text-center text-base focus-brand"
+                className="w-20 text-center text-base focus-brand bg-zinc-50 border-border/40"
                 {...register("cantidadHijos")}
               />
             </div>
@@ -298,7 +302,7 @@ export default function ArgentinaSalaryCalculator() {
                 id="descuentoAdicional"
                 inputMode="numeric"
                 placeholder={t("inputs.descuentoAdicionalPlaceholder")}
-                className="pl-7 text-base focus-brand"
+                className="pl-7 text-base focus-brand bg-zinc-50 border-border/40"
                 {...register("descuentoAdicional", {
                   onChange: (e) => {
                     const formatted = formatInputValue(e.target.value);
@@ -313,12 +317,12 @@ export default function ArgentinaSalaryCalculator() {
           {result && (
             <Button
               variant="outline"
-              className="w-full gap-2 mt-2"
+              className="w-full gap-2 mt-2 border-primary/20 hover:border-primary/50 text-primary hover:text-primary-foreground hover:bg-primary/10 transition-colors"
               onClick={handleShare}
             >
               {copied ? (
                 <>
-                  <Check className="h-4 w-4 text-[#10B981]" />
+                  <Check className="h-4 w-4 text-primary" />
                   {t("inputs.copiadoMsg")}
                 </>
               ) : (
@@ -331,11 +335,11 @@ export default function ArgentinaSalaryCalculator() {
           )}
 
           {/* Disclaimer */}
-          <p className="text-xs text-muted-foreground leading-relaxed border-t border-border pt-3">
+          <p className="text-xs text-muted-foreground leading-relaxed border-t border-border/40 pt-3">
             {t("advertencia")}
           </p>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       {/* ===== RESULTS PANEL ===== */}
       <div className="lg:col-span-3 space-y-5">
@@ -346,9 +350,9 @@ export default function ArgentinaSalaryCalculator() {
           </>
         ) : (
           /* Placeholder vacío con altura reservada para evitar CLS */
-          <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed border-border bg-muted/20 min-h-[400px] text-center p-8">
-            <div className="w-12 h-12 rounded-full bg-[#10B981]/10 flex items-center justify-center mb-4">
-              <Calculator className="h-6 w-6 text-[#10B981]" />
+          <div className="relative flex flex-col items-center justify-center rounded-xl border border-dashed border-border/40 bg-card/40 min-h-[400px] text-center p-8">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <Calculator className="h-6 w-6 text-primary" />
             </div>
             <p className="text-base font-medium text-foreground">Ingresá tu sueldo bruto</p>
             <p className="mt-1 text-sm text-muted-foreground">

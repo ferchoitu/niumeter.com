@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { ArrowRight, Shield, RefreshCw, UserCheck, Gauge, Calculator, ChevronRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
@@ -100,75 +101,120 @@ export default async function HomePage({ params }: HomePageProps) {
     },
   ];
 
+  const philosophyItems = [
+    {
+      num: "01",
+      title: locale === "es" ? "Transparencia LCT" : "LCT Transparency",
+      description:
+        locale === "es"
+          ? "Cálculos basados estrictamente en la Ley de Contrato de Trabajo de Argentina. Fórmulas abiertas, claras y sin letra chica."
+          : "Calculations based strictly on Argentine Labor Law. Open, clear formulas with no fine print.",
+    },
+    {
+      num: "02",
+      title: locale === "es" ? "Velocidad Inmediata" : "Instant Speed",
+      description:
+        locale === "es"
+          ? "Sin registros molestos ni capturas de datos. Obtené tus resultados de aguinaldo, indemnización o sueldo neto en 5 segundos."
+          : "No annoying signups or data harvesting. Get your severance, bonus, or salary results in 5 seconds.",
+    },
+    {
+      num: "03",
+      title: locale === "es" ? "Privacidad Absoluta" : "Absolute Privacy",
+      description:
+        locale === "es"
+          ? "Todo el procesamiento de tus datos financieros ocurre localmente en tu dispositivo. Tu información nunca toca nuestros servidores."
+          : "All processing of your financial data happens locally on your device. Your info never touches our servers.",
+    },
+  ];
+
   return (
     <>
       <JsonLd data={websiteSchema} />
       <JsonLd data={organizationSchema} />
 
       {/* ===== HERO ===== */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#f0fdf4] via-white to-[#eff6ff] border-b border-border">
+      <section className="relative overflow-hidden bg-gradient-to-b from-zinc-50/50 via-white to-white border-b border-border/40">
         {/* Background orbs */}
         <div
           aria-hidden
-          className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-30"
+          className="absolute -top-24 -right-24 w-96 h-96 rounded-full opacity-20"
           style={{
-            background: "radial-gradient(circle, #10B981 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%)",
           }}
         />
         <div
           aria-hidden
-          className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full opacity-20"
+          className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full opacity-10"
           style={{
-            background: "radial-gradient(circle, #1E3A8A 0%, transparent 70%)",
+            background: "radial-gradient(circle, rgba(59,130,246,0.1) 0%, transparent 70%)",
           }}
         />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-[#10B981]/10 px-4 py-1.5 text-sm font-medium text-[#10B981] ring-1 ring-[#10B981]/20 mb-6">
-              <Gauge className="h-4 w-4" />
-              🇦🇷 Argentina · 2026
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              <div className="inline-flex self-start items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary ring-1 ring-primary/20 mb-6">
+                <Gauge className="h-4 w-4" />
+                🇦🇷 Argentina · 2026
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-black leading-tight text-balance">
+                {t("hero.headline")}
+              </h1>
+              <p className="mt-6 text-lg md:text-xl text-zinc-650 max-w-2xl leading-relaxed">
+                {t("hero.subheadline")}
+              </p>
+
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Link
+                  href={`/${locale}/calculadora-sueldo/argentina`}
+                  className={cn(
+                    buttonVariants({ size: "lg" }),
+                    "bg-primary hover:bg-primary/90 text-white font-bold px-8 rounded-xl transition-all duration-200 shadow-md hover:shadow-primary/20"
+                  )}
+                >
+                  {t("hero.cta")}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+                <a
+                  href="#calculadoras"
+                  className={cn(
+                    buttonVariants({ variant: "outline", size: "lg" }),
+                    "font-medium px-8 rounded-xl border-border bg-white text-zinc-800 hover:bg-zinc-50"
+                  )}
+                >
+                  {t("hero.ctaSecondary")}
+                </a>
+              </div>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight text-balance">
-              {t("hero.headline")}
-            </h1>
-            <p className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-              {t("hero.subheadline")}
-            </p>
-
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Link
-                href={`/${locale}/calculadora-sueldo/argentina`}
-                className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "bg-[#10B981] hover:bg-[#059669] text-white font-semibold px-8 rounded-xl transition-all duration-200 shadow-md hover:shadow-[#10B981]/25"
-                )}
-              >
-                {t("hero.cta")}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-              <a
-                href="#calculadoras"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "font-medium px-8 rounded-xl"
-                )}
-              >
-                {t("hero.ctaSecondary")}
-              </a>
+            <div className="lg:col-span-5 relative w-full h-[300px] sm:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden shadow-2xl border border-border/60 group">
+              <span className="cyber-corner cyber-corner-tl z-10 w-3 h-3 border-t-2 border-l-2" />
+              <span className="cyber-corner cyber-corner-tr z-10 w-3 h-3 border-t-2 border-r-2" />
+              <span className="cyber-corner cyber-corner-bl z-10 w-3 h-3 border-b-2 border-l-2" />
+              <span className="cyber-corner cyber-corner-br z-10 w-3 h-3 border-b-2 border-r-2" />
+              <Image
+                src="/hero.jpg"
+                alt="Niumeter Hero Image"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
         </div>
       </section>
 
       {/* ===== TRUST BAR ===== */}
-      <section className="border-b border-border bg-white" aria-label={t("trust.titulo")}>
+      <section className="border-b border-border/40 bg-card/25" aria-label={t("trust.titulo")}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             {trustItems.map((item, idx) => (
               <div key={idx} className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span className="text-[#10B981]">{item.icon}</span>
+                <span className="text-primary">{item.icon}</span>
                 {item.label}
               </div>
             ))}
@@ -183,26 +229,33 @@ export default async function HomePage({ params }: HomePageProps) {
         aria-labelledby="calculadoras-heading"
       >
         <div className="text-center mb-12">
-          <h2 id="calculadoras-heading" className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 id="calculadoras-heading" className="text-3xl md:text-4xl font-bold text-zinc-950">
             {t("calculadoras.titulo")}
           </h2>
-          <p className="mt-3 text-muted-foreground text-lg">
+          <p className="mt-3 text-zinc-600 text-lg">
             {t("calculadoras.descripcion")}
           </p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {calculadoras.map((calc) => (
-            <Card
+            <div
               key={calc.id}
-              className={`group border border-border/60 shadow-sm transition-all duration-200 ${
-                calc.available
-                  ? "cursor-pointer card-hover hover:border-[#10B981]/50"
-                  : "opacity-70"
+              className={`group relative glass-panel p-6 rounded-xl flex flex-col justify-between h-full border border-border/40 transition-all duration-200 ${
+                calc.available ? "cursor-pointer card-hover" : "opacity-40"
               }`}
             >
-              <CardHeader className="pb-3">
-                <div className="flex items-start justify-between mb-2">
+              {calc.available && (
+                <>
+                  <span className="cyber-corner cyber-corner-tl group-hover:-translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <span className="cyber-corner cyber-corner-tr group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  <span className="cyber-corner cyber-corner-bl group-hover:-translate-x-0.5 group-hover:translate-y-0.5" />
+                  <span className="cyber-corner cyber-corner-br group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+                </>
+              )}
+
+              <div>
+                <div className="flex items-start justify-between mb-4">
                   <span className="text-3xl" aria-hidden>
                     {calc.emoji}
                   </span>
@@ -210,25 +263,26 @@ export default async function HomePage({ params }: HomePageProps) {
                     variant={calc.available ? "default" : "secondary"}
                     className={
                       calc.available
-                        ? "bg-[#10B981]/10 text-[#10B981] border-0 text-xs"
+                        ? "bg-primary/10 text-primary border-primary/20 text-xs"
                         : "text-xs"
                     }
                   >
                     {calc.badge}
                   </Badge>
                 </div>
-                <CardTitle className="text-base leading-snug">{calc.title}</CardTitle>
-                <CardDescription className="text-sm leading-relaxed">
+                <h3 className="text-lg font-bold mb-2 text-zinc-900 leading-snug">{calc.title}</h3>
+                <p className="text-sm text-zinc-600 leading-relaxed mb-6">
                   {calc.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
+                </p>
+              </div>
+
+              <div>
                 {calc.available ? (
                   <Link
                     href={calc.href}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "sm" }),
-                      "w-full justify-between text-[#10B981] hover:bg-[#10B981]/10 hover:text-[#10B981] -mx-2 group-hover:translate-x-0.5 transition-transform"
+                      "w-full justify-between text-primary hover:bg-primary/10 hover:text-primary -mx-2 px-2 group-hover:translate-x-0.5 transition-transform"
                     )}
                   >
                     {calc.cta}
@@ -240,44 +294,99 @@ export default async function HomePage({ params }: HomePageProps) {
                     <Calculator className="h-4 w-4 opacity-40" />
                   </div>
                 )}
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
+      {/* ===== PHILOSOPHY / TIMELINE SECTION ===== */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 border-t border-border/40">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          {/* Left side text */}
+          <div className="lg:col-span-5 lg:sticky lg:top-24">
+            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary ring-1 ring-primary/20 mb-6">
+              {locale === "es" ? "Nuestros Principios" : "Our Principles"}
+            </div>
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-950 leading-tight">
+              {locale === "es" ? "Cálculos honestos, herramientas privadas" : "Honest calculations, private tools"}
+            </h2>
+            <p className="mt-4 text-zinc-600 text-base md:text-lg leading-relaxed">
+              {locale === "es"
+                ? "Diseñamos Niumeter para devolver la transparencia a las finanzas personales de los trabajadores argentinos. Sin trucos, sin publicidad invasiva."
+                : "We designed Niumeter to bring transparency back to personal finance for Argentine workers. No tricks, no invasive ads."}
+            </p>
+          </div>
+
+          {/* Right side timeline */}
+          <div className="lg:col-span-7 relative pl-8 lg:pl-16">
+            {/* Vertical line */}
+            <div className="absolute left-[9px] lg:left-[41px] top-4 bottom-4 w-[2px] bg-gradient-to-b from-primary via-border/40 to-transparent" />
+
+            <div className="space-y-12">
+              {philosophyItems.map((item, idx) => (
+                <div key={idx} className="relative flex flex-col md:flex-row gap-6 items-start">
+                  {/* Timeline dot */}
+                  <div className="absolute left-[-30px] lg:left-[-62px] top-1.5 flex items-center justify-center">
+                    <div className="w-5 h-5 bg-background border-2 border-primary rounded-sm flex items-center justify-center neon-glow">
+                      <div className="w-1.5 h-1.5 bg-primary rounded-sm" />
+                    </div>
+                  </div>
+
+                  {/* Glass Card */}
+                  <div className="relative w-full glass-panel p-6 md:p-8 rounded-xl border border-border/40 bg-white/70">
+                    <span className="cyber-corner cyber-corner-tl" />
+                    <span className="cyber-corner cyber-corner-tr" />
+                    <span className="cyber-corner cyber-corner-bl" />
+                    <span className="cyber-corner cyber-corner-br" />
+
+                    <div className="flex items-baseline gap-4 mb-3">
+                      <span className="text-2xl font-mono font-bold text-primary/40">{item.num}</span>
+                      <h3 className="text-xl font-bold text-zinc-950">{item.title}</h3>
+                    </div>
+                    <p className="text-sm md:text-base text-zinc-650 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== PAÍSES ===== */}
-      <section className="bg-[#10B981]/5 border-y border-[#10B981]/20 py-12" aria-labelledby="paises-heading">
+      <section className="bg-primary/5 border-y border-primary/10 py-12" aria-labelledby="paises-heading">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 id="paises-heading" className="text-2xl font-bold text-foreground mb-8 text-center">
+          <h2 id="paises-heading" className="text-2xl font-bold text-zinc-950 mb-8 text-center">
             {t("paises.titulo")}
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
-            <div className="flex items-center gap-3 bg-white rounded-xl border border-border px-5 py-3 shadow-sm">
+            <div className="flex items-center gap-3 bg-card rounded-xl border border-border px-5 py-3 shadow-sm">
               <span className="text-2xl">🇦🇷</span>
               <div>
-                <p className="font-semibold text-sm text-foreground">{t("paises.argentina")}</p>
-                <p className="text-xs text-[#10B981]">Disponible</p>
+                <p className="font-semibold text-sm text-zinc-900">{t("paises.argentina")}</p>
+                <p className="text-xs text-primary">Disponible</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 bg-white/50 rounded-xl border border-dashed border-border px-5 py-3 opacity-50">
+            <div className="flex items-center gap-3 bg-card/50 rounded-xl border border-dashed border-border px-5 py-3 opacity-50">
               <span className="text-2xl">🇲🇽</span>
               <div>
-                <p className="font-semibold text-sm text-foreground">México</p>
+                <p className="font-semibold text-sm text-zinc-900">México</p>
                 <p className="text-xs text-muted-foreground">{t("paises.proximamente")}</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 bg-white/50 rounded-xl border border-dashed border-border px-5 py-3 opacity-50">
+            <div className="flex items-center gap-3 bg-card/50 rounded-xl border border-dashed border-border px-5 py-3 opacity-50">
               <span className="text-2xl">🇨🇱</span>
               <div>
-                <p className="font-semibold text-sm text-foreground">Chile</p>
+                <p className="font-semibold text-sm text-zinc-900">Chile</p>
                 <p className="text-xs text-muted-foreground">{t("paises.proximamente")}</p>
               </div>
             </div>
-            <div className="flex items-center gap-3 bg-white/50 rounded-xl border border-dashed border-border px-5 py-3 opacity-50">
+            <div className="flex items-center gap-3 bg-card/50 rounded-xl border border-dashed border-border px-5 py-3 opacity-50">
               <span className="text-2xl">🇨🇴</span>
               <div>
-                <p className="font-semibold text-sm text-foreground">Colombia</p>
+                <p className="font-semibold text-sm text-zinc-900">Colombia</p>
                 <p className="text-xs text-muted-foreground">{t("paises.proximamente")}</p>
               </div>
             </div>
@@ -287,12 +396,12 @@ export default async function HomePage({ params }: HomePageProps) {
 
       {/* ===== CTA FINAL ===== */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-zinc-950 mb-4">
           {locale === "es"
             ? "¿Cuánto te queda de sueldo este mes?"
             : "How much take-home pay do you have this month?"}
         </h2>
-        <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
+        <p className="text-zinc-600 text-lg mb-8 max-w-xl mx-auto">
           {locale === "es"
             ? "Calculalo en 30 segundos. Sin registro, sin publicidades agresivas."
             : "Calculate it in 30 seconds. No registration, no aggressive ads."}
@@ -301,7 +410,7 @@ export default async function HomePage({ params }: HomePageProps) {
           href={`/${locale}/calculadora-sueldo/argentina`}
           className={cn(
             buttonVariants({ size: "lg" }),
-            "bg-[#10B981] hover:bg-[#059669] text-white font-semibold px-10 rounded-xl shadow-md hover:shadow-[#10B981]/25 transition-all duration-200"
+            "bg-primary hover:bg-primary/90 text-white font-bold px-10 rounded-xl shadow-md hover:shadow-primary/20 transition-all duration-200"
           )}
         >
           {locale === "es" ? "Calcular ahora — es gratis" : "Calculate now — it's free"}

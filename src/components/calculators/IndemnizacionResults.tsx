@@ -64,49 +64,58 @@ export default function IndemnizacionResults({ result }: IndemnizacionResultsPro
     <div className="space-y-4">
       {/* Aviso tipo de despido limitado */}
       {esLimitado && (
-        <Card className="border border-amber-200/60 bg-amber-50/40">
-          <CardContent className="p-4 flex items-start gap-3">
-            <AlertCircle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
-            <div>
-              <p className="text-sm font-semibold text-amber-800">
-                {TIPO_LABELS[result.tipoDespido]}
-              </p>
-              <p className="text-xs text-amber-700 mt-1 leading-relaxed">
-                Con renuncia o despido con causa, no corresponde indemnización por antigüedad ni
-                preaviso. Solo aplican vacaciones proporcionales y SAC del período.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="relative glass-panel rounded-xl border border-amber-500/20 bg-amber-50/50 p-4 flex items-start gap-3">
+          <span className="cyber-corner cyber-corner-tl" />
+          <span className="cyber-corner cyber-corner-tr" />
+          <span className="cyber-corner cyber-corner-bl" />
+          <span className="cyber-corner cyber-corner-br" />
+          <AlertCircle className="h-5 w-5 text-amber-600 shrink-0 mt-0.5" />
+          <div>
+            <p className="text-sm font-semibold text-amber-700">
+              {TIPO_LABELS[result.tipoDespido]}
+            </p>
+            <p className="text-xs text-amber-800 mt-1 leading-relaxed">
+              Con renuncia o despido con causa, no corresponde indemnización por antigüedad ni
+              preaviso. Solo aplican vacaciones proporcionales y SAC del período.
+            </p>
+          </div>
+        </div>
       )}
 
       {/* Tope aplicado */}
       {result.topeAplicado && (
-        <Card className="border border-blue-200/60 bg-blue-50/40">
-          <CardContent className="p-4 flex items-start gap-3">
-            <Info className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" />
-            <p className="text-xs text-blue-800 leading-relaxed">
-              <strong>Tope Art. 245 aplicado:</strong> La base de cálculo fue limitada a{" "}
-              {formatARS(result.topeMaximo)} (67 × SMVM $367.800 — Res. 9/2025).
-            </p>
-          </CardContent>
-        </Card>
+        <div className="relative glass-panel rounded-xl border border-blue-500/20 bg-blue-50/50 p-4 flex items-start gap-3">
+          <span className="cyber-corner cyber-corner-tl" />
+          <span className="cyber-corner cyber-corner-tr" />
+          <span className="cyber-corner cyber-corner-bl" />
+          <span className="cyber-corner cyber-corner-br" />
+          <Info className="h-5 w-5 text-sky-600 shrink-0 mt-0.5" />
+          <p className="text-xs text-sky-800 leading-relaxed">
+            <strong>Tope Art. 245 aplicado:</strong> La base de cálculo fue limitada a{" "}
+            {formatARS(result.topeMaximo)} (67 × SMVM $367.800 — Res. 9/2025).
+          </p>
+        </div>
       )}
 
       {/* Card principal — total */}
-      <Card className="border-0 shadow-md bg-gradient-to-br from-[#10B981] to-[#059669] text-white overflow-hidden relative">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOHYzNmMwIDkuOTQgOC4wNiAxOCAxOCAxOFYxOHoiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L2c+PC9zdmc+')] opacity-30" />
-        <CardContent className="relative p-6">
+      <div className="relative glass-panel rounded-xl border border-border/40 overflow-hidden relative shadow-[0_0_20px_rgba(16,185,129,0.06)] bg-white/90">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOHYzNmMwIDkuOTQgOC4wNiAxOCAxOCAxOFYxOHoiIGZpbGw9InJnYmEoMCwwLDAsMC4wMikiLz48L2c+PC9zdmc+')] opacity-20 pointer-events-none" />
+        <span className="cyber-corner cyber-corner-tl" />
+        <span className="cyber-corner cyber-corner-tr" />
+        <span className="cyber-corner cyber-corner-bl" />
+        <span className="cyber-corner cyber-corner-br" />
+
+        <div className="relative p-6">
           <div className="flex items-center gap-2 mb-2">
-            <Scale className="h-4 w-4 text-emerald-100" />
-            <p className="text-emerald-100 text-sm font-medium uppercase tracking-wider">
+            <Scale className="h-4 w-4 text-primary/80" />
+            <p className="text-primary/80 text-xs font-semibold uppercase tracking-widest">
               Total a cobrar
             </p>
           </div>
-          <p className="text-4xl md:text-5xl font-bold tabular-nums tracking-tight">
+          <p className="text-4xl md:text-5xl font-extrabold tabular-nums tracking-tight text-primary">
             {formatARS(result.totalBruto)}
           </p>
-          <p className="text-emerald-100 text-sm mt-2">
+          <p className="text-muted-foreground text-xs mt-2 font-medium">
             {TIPO_LABELS[result.tipoDespido]} ·{" "}
             {result.antiguedad.anos > 0 || result.antiguedad.meses > 0
               ? `${result.antiguedad.anos} año${result.antiguedad.anos !== 1 ? "s" : ""}${
@@ -117,80 +126,85 @@ export default function IndemnizacionResults({ result }: IndemnizacionResultsPro
               : "Antigüedad no calculada"}
           </p>
           {result.antiguedad.anosParaCalculo !== result.antiguedad.anos && (
-            <p className="text-emerald-200 text-xs mt-1">
+            <p className="text-primary/75 text-[10px] mt-1.5 font-medium">
               Fracción {result.antiguedad.meses} meses {">"} 3 → calculado como{" "}
               {result.antiguedad.anosParaCalculo} años
             </p>
           )}
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       {/* Desglose */}
-      <Card className="border border-border/60 shadow-sm">
-        <CardHeader className="pb-3">
-          <CardTitle className="text-base flex items-center gap-2">
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
-            Desglose por concepto
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="p-0">
-          <div className="divide-y divide-border">
+      <div className="relative glass-panel rounded-xl border border-border/40 bg-white/90">
+        <span className="cyber-corner cyber-corner-tl" />
+        <span className="cyber-corner cyber-corner-tr" />
+        <span className="cyber-corner cyber-corner-bl" />
+        <span className="cyber-corner cyber-corner-br" />
+
+        <div className="p-4 border-b border-border/40 flex items-center gap-2">
+          <TrendingUp className="h-4 w-4 text-muted-foreground" />
+          <h3 className="text-sm font-bold text-foreground">Desglose por concepto</h3>
+        </div>
+        <div className="p-0">
+          <div className="divide-y divide-border/40">
             {conceptos.map((c, i) => (
               <div
                 key={i}
-                className="flex items-center justify-between px-6 py-3 hover:bg-muted/30 transition-colors"
+                className="flex items-center justify-between px-6 py-3 hover:bg-zinc-50/40 transition-colors"
               >
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="h-3.5 w-3.5 text-[#10B981] flex-shrink-0" />
-                  <span className="text-sm text-foreground">{c.label}</span>
+                  <CheckCircle className="h-3.5 w-3.5 text-primary flex-shrink-0" />
+                  <span className="text-xs text-foreground font-medium">{c.label}</span>
                   {c.tooltip && (
-                    <span className="text-xs text-amber-600 bg-amber-50 px-1.5 py-0.5 rounded">
+                    <span className="text-[10px] text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-500/20">
                       {c.tooltip}
                     </span>
                   )}
                 </div>
-                <span className="text-sm font-semibold tabular-nums text-[#10B981]">
+                <span className="text-sm font-bold tabular-nums text-primary">
                   {formatARS(c.monto)}
                 </span>
               </div>
             ))}
 
             {esLimitado && result.totalBruto === result.vacacionesProporcionales && (
-              <div className="px-6 py-3 text-sm text-muted-foreground text-center">
+              <div className="px-6 py-4 text-xs text-muted-foreground text-center bg-zinc-50/50">
                 No corresponden otros conceptos para este tipo de desvinculación.
               </div>
             )}
 
-            <Separator />
-            <div className="flex items-center justify-between px-6 py-3 bg-[#10B981]/5">
+            <Separator className="bg-border/40" />
+            <div className="flex items-center justify-between px-6 py-3.5 bg-primary/5 rounded-b-xl">
               <div className="flex items-center gap-2">
-                <Scale className="h-4 w-4 text-[#10B981]" />
+                <Scale className="h-4 w-4 text-primary" />
                 <span className="text-sm font-bold text-foreground">Total</span>
                 <Badge
                   variant="secondary"
-                  className="bg-[#10B981]/10 text-[#10B981] border-0 text-xs"
+                  className="bg-primary/10 text-primary border border-primary/20 text-[10px]"
                 >
                   {result.tipoDespido === "sin_causa" ? "Art. 245 LCT" : "Liquidación parcial"}
                 </Badge>
               </div>
-              <span className="text-base font-bold tabular-nums text-[#10B981]">
+              <span className="text-base font-bold tabular-nums text-primary">
                 {formatARS(result.totalBruto)}
               </span>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
 
       {/* Info card */}
-      <Card className="border border-blue-200/60 bg-blue-50/40">
-        <CardContent className="p-4">
-          <p className="text-xs text-blue-800 leading-relaxed">
-            <strong>⚖️ Monto bruto estimativo.</strong> La indemnización no está sujeta a aportes
-            previsionales ni Ganancias. Los plazos de pago: el empleador tiene 4 días hábiles para
-            liquidar (Art. 128 LCT). El incumplimiento genera intereses y sanciones.
-          </p>
-        </CardContent>
-      </Card>
+      <div className="relative glass-panel rounded-xl border border-blue-500/20 bg-blue-50/50 p-5">
+        <span className="cyber-corner cyber-corner-tl" />
+        <span className="cyber-corner cyber-corner-tr" />
+        <span className="cyber-corner cyber-corner-bl" />
+        <span className="cyber-corner cyber-corner-br" />
+        <p className="text-xs text-blue-800 leading-relaxed">
+          <strong>⚖️ Monto bruto estimativo.</strong> La indemnización no está sujeta a aportes
+          previsionales ni Ganancias. Los plazos de pago: el empleador tiene 4 días hábiles para
+          liquidar (Art. 128 LCT). El incumplimiento genera intereses y sanciones.
+        </p>
+      </div>
     </div>
   );
 }

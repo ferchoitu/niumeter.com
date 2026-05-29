@@ -42,7 +42,7 @@
   --color-chart-5: var(--chart-5);
 
   /* Typography */
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
 
   /* Radius */
@@ -55,34 +55,34 @@
 }
 
 /* ============================================
-   LIGHT MODE — Niumeter off-white palette
+   LIGHT MODE SYSTEM — Clean White Palette
    ============================================ */
 :root {
-  --background: oklch(0.99 0.002 95);       /* #FAFAF9 off-white */
-  --foreground: oklch(0.2 0.01 250);        /* #1F2937 dark gray */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.01 250);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.01 250);
-  --primary: oklch(0.6 0.17 160);           /* #10B981 emerald */
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.97 0.005 250);
-  --secondary-foreground: oklch(0.2 0.01 250);
-  --muted: oklch(0.96 0.005 250);
-  --muted-foreground: oklch(0.5 0.01 250);
-  --accent: oklch(0.93 0.03 160);            /* emerald tint */
-  --accent-foreground: oklch(0.25 0.12 155);
+  --background: #ffffff;                   /* White */
+  --foreground: #09090b;                   /* Dark slate */
+  --card: rgba(255, 255, 255, 0.75);       /* Glass panel bg */
+  --card-foreground: #09090b;
+  --popover: #ffffff;
+  --popover-foreground: #09090b;
+  --primary: #10b981;                      /* Emerald green */
+  --primary-foreground: #ffffff;
+  --secondary: #f4f4f5;
+  --secondary-foreground: #09090b;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --accent: rgba(16, 185, 129, 0.06);
+  --accent-foreground: #10b981;
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.005 250);
-  --input: oklch(0.94 0.005 250);
-  --ring: oklch(0.6 0.17 160);              /* emerald ring */
+  --border: rgba(9, 9, 11, 0.08);
+  --input: #f4f4f5;
+  --ring: #10b981;
 
-  /* Chart — Niumeter palette for pie charts */
-  --chart-1: oklch(0.6 0.17 160);           /* emerald */
-  --chart-2: oklch(0.4 0.15 245);           /* navy */
-  --chart-3: oklch(0.75 0.12 85);           /* amber */
-  --chart-4: oklch(0.55 0.1 280);           /* purple */
-  --chart-5: oklch(0.65 0.15 200);          /* teal */
+  /* Chart — Branded colors */
+  --chart-1: #10b981;
+  --chart-2: #1e3a8a;
+  --chart-3: #f59e0b;
+  --chart-4: #3b82f6;
+  --chart-5: #a855f7;
 
   --radius: 0.75rem;
 }
@@ -112,6 +112,7 @@
     font-feature-settings: "cv11", "ss01";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-montserrat), sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -140,16 +141,64 @@
 
   /* Brand gradient */
   .gradient-brand {
-    background: linear-gradient(135deg, #10B981 0%, #1E3A8A 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  }
+
+  /* Glass panel effect */
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(9, 9, 11, 0.08);
+    backdrop-filter: blur(16px);
   }
 
   /* Card hover lift */
   .card-hover {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s ease;
   }
   .card-hover:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px -5px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 8px 30px -5px rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.3) !important;
+  }
+
+  /* Cyber corner brackets */
+  .cyber-corner {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-color: var(--primary);
+    border-style: solid;
+    pointer-events: none;
+    opacity: 0.85;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .cyber-corner-tl {
+    top: -1px;
+    left: -1px;
+    border-width: 1.5px 0 0 1.5px;
+  }
+  .cyber-corner-tr {
+    top: -1px;
+    right: -1px;
+    border-width: 1.5px 1.5px 0 0;
+  }
+  .cyber-corner-bl {
+    bottom: -1px;
+    left: -1px;
+    border-width: 0 0 1.5px 1.5px;
+  }
+  .cyber-corner-br {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 1.5px 1.5px 0;
+  }
+
+  /* Neon glow */
+  .neon-glow {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+  }
+  .neon-glow-hover:hover {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
   }
 
   /* Smooth number transition */
@@ -157,7 +206,7 @@
 
   /* Niumeter branded focus ring */
   .focus-brand:focus-visible {
-    outline: 2px solid #10B981;
+    outline: 2px solid #10b981;
     outline-offset: 2px;
   }
 }
