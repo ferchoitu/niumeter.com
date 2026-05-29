@@ -199,6 +199,7 @@ export default async function HomePage({ params }: HomePageProps) {
                 alt="Niumeter Hero Image"
                 fill
                 priority
+                fetchPriority="high"
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />

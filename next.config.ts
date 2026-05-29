@@ -8,10 +8,16 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
 
+  // Inline critical CSS to eliminate the render-blocking chunk
+  experimental: {
+    optimizeCss: true,
+  },
+
   // Image optimization
   images: {
     formats: ["image/avif", "image/webp"],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    deviceSizes: [640, 750, 828, 1080, 1200],
+    minimumCacheTTL: 31536000,
   },
 
   // Security headers
