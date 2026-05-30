@@ -118,6 +118,11 @@
       "description": "Calculá tu indemnización por despido en Argentina 2026. Antigüedad, preaviso, integración y SAC proporcional según Ley 20.744.",
       "h1": "Calculadora de Indemnización por Despido en Argentina 2026"
     },
+    "monotributoCalc": {
+      "title": "Calculadora Monotributo Argentina 2026",
+      "description": "Calculá tu categoría de monotributo en Argentina 2026 y cuánto pagás por mes. Datos actualizados de ARCA. Servicios y venta de bienes.",
+      "h1": "Calculadora de Monotributo Argentina 2026"
+    },
     "home": {
       "title": "Calculadoras Financieras Argentina 2026 | Niumeter",
       "description": "Calculadoras de sueldo neto, aguinaldo e indemnización para Argentina. Datos actualizados 2026. Sin registro."
@@ -142,7 +147,8 @@
     "argentina": "Argentina",
     "sueldoNeto": "Sueldo Neto",
     "aguinaldo": "Aguinaldo (SAC)",
-    "indemnizacion": "Indemnización"
+    "indemnizacion": "Indemnización",
+    "monotributo": "Monotributo"
   },
   "common": {
     "cargando": "Calculando...",

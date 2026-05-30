@@ -118,6 +118,11 @@
       "description": "Calculate your severance pay in Argentina 2026. Seniority, notice, integration and proportional SAC under Law 20.744.",
       "h1": "Argentina Severance Pay Calculator 2026"
     },
+    "monotributoCalc": {
+      "title": "Argentina Monotributo Calculator 2026",
+      "description": "Calculate your Argentina monotributo category for 2026 and how much you pay per month. Updated ARCA data. Services and goods.",
+      "h1": "Argentina Monotributo Calculator 2026"
+    },
     "home": {
       "title": "Financial Calculators Argentina 2026 | Niumeter",
       "description": "Net salary, annual bonus, and severance calculators for Argentina. Updated data for 2026. No registration required."
@@ -142,7 +147,8 @@
     "argentina": "Argentina",
     "sueldoNeto": "Net Salary",
     "aguinaldo": "Annual Bonus (SAC)",
-    "indemnizacion": "Severance Pay"
+    "indemnizacion": "Severance Pay",
+    "monotributo": "Monotributo"
   },
   "common": {
     "cargando": "Calculating...",
