@@ -15,7 +15,9 @@ export default function Footer({ locale }: FooterProps) {
     { label: t("sueldoNeto") + " — Argentina", href: `/${locale}/calculadora-sueldo/argentina`, active: true },
     { label: t("aguinaldo") + " — Argentina", href: `/${locale}/calculadora-aguinaldo/argentina`, active: true },
     { label: t("indemnizacion") + " — Argentina", href: `/${locale}/calculadora-indemnizacion/argentina`, active: true },
+    { label: t("monotributo") + " — Argentina", href: `/${locale}/calculadora-monotributo/argentina`, active: true },
   ];
+
 
   return (
     <footer className="border-t border-border/40 bg-zinc-50" aria-label="Pie de página">

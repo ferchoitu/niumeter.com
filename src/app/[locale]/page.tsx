@@ -75,6 +75,18 @@ export default async function HomePage({ params }: HomePageProps) {
       badge: "Disponible",
     },
     {
+      id: "monotributo",
+      emoji: "🧾",
+      title: locale === "es" ? "Calculadora de Monotributo" : "Monotributo Calculator",
+      description: locale === "es"
+        ? "Determiná tu categoría A–K, cuánto pagás por mes y cuánto margen de facturación te queda."
+        : "Determine your A–K category, how much you pay per month and your remaining invoicing margin.",
+      cta: locale === "es" ? "Calcular ahora" : "Calculate now",
+      href: `/${locale}/calculadora-monotributo/argentina`,
+      available: true,
+      badge: "Disponible",
+    },
+    {
       id: "freelance",
       emoji: "🖥️",
       title: t("cards.freelance.titulo"),
@@ -238,7 +250,7 @@ export default async function HomePage({ params }: HomePageProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {calculadoras.map((calc) => (
             <div
               key={calc.id}

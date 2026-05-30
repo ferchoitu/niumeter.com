@@ -39,7 +39,13 @@ export default function Header({ locale }: HeaderProps) {
       href: `/${locale}/calculadora-indemnizacion/argentina`,
       disabled: false,
     },
+    {
+      label: `${t("argentina")} — ${t("monotributo")}`,
+      href: `/${locale}/calculadora-monotributo/argentina`,
+      disabled: false,
+    },
   ];
+
 
   return (
     <>
