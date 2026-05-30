@@ -262,13 +262,12 @@ const taxData: TaxDatabase = {
         },
         {
           letra: "G",
-          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — tope Cat G
-          ingresoMax: null,
-          ingresoMaxValidated: false,
-          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — cuota Cat G
-          cuotaServicios: null,
-          cuotaBienes: null,
-          cuotaValidated: false,
+          ingresoMax: 46211109,    // Validado owner — fuente: ARCA Jun 2026 ($46.211.109,37)
+          ingresoMaxValidated: true,
+          cuotaServicios: 197108.23,  // Validado owner — fuente: ARCA Jun 2026
+          cuotaBienes: 118920.05,     // Validado owner — fuente: ARCA Jun 2026
+          cuotaValidated: true,
+          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — tabla desglose Cat G
           impuestoIntegrado: null,
           aporteSIPA: null,
           obraSocial: null,
@@ -276,13 +275,12 @@ const taxData: TaxDatabase = {
         },
         {
           letra: "H",
-          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — tope Cat H
-          ingresoMax: null,
-          ingresoMaxValidated: false,
-          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — cuota Cat H
-          cuotaServicios: null,
-          cuotaBienes: null,
-          cuotaValidated: false,
+          ingresoMax: 70113407,    // Validado owner — fuente: ARCA Jun 2026 ($70.113.407,33)
+          ingresoMaxValidated: true,
+          cuotaServicios: 447346.93,  // Validado owner — fuente: ARCA Jun 2026
+          cuotaBienes: 238038.48,     // Validado owner — fuente: ARCA Jun 2026
+          cuotaValidated: true,
+          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — tabla desglose Cat H
           impuestoIntegrado: null,
           aporteSIPA: null,
           obraSocial: null,
@@ -290,13 +288,12 @@ const taxData: TaxDatabase = {
         },
         {
           letra: "I",
-          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — tope Cat I
-          ingresoMax: null,
-          ingresoMaxValidated: false,
-          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — cuota Cat I
-          cuotaServicios: null,
-          cuotaBienes: null,
-          cuotaValidated: false,
+          ingresoMax: 78479212,    // Validado owner — fuente: ARCA Jun 2026 ($78.479.211,62)
+          ingresoMaxValidated: true,
+          cuotaServicios: 824802.26,  // Validado owner — fuente: ARCA Jun 2026
+          cuotaBienes: 355672.64,     // Validado owner — fuente: ARCA Jun 2026
+          cuotaValidated: true,
+          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — tabla desglose Cat I
           impuestoIntegrado: null,
           aporteSIPA: null,
           obraSocial: null,
@@ -304,13 +301,12 @@ const taxData: TaxDatabase = {
         },
         {
           letra: "J",
-          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — tope Cat J
-          ingresoMax: null,
-          ingresoMaxValidated: false,
-          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — cuota Cat J
-          cuotaServicios: null,
-          cuotaBienes: null,
-          cuotaValidated: false,
+          ingresoMax: 89872640,    // Validado owner — fuente: ARCA Jun 2026 ($89.872.640,30)
+          ingresoMaxValidated: true,
+          cuotaServicios: 999007.65,  // Validado owner — fuente: ARCA Jun 2026
+          cuotaBienes: 434895.92,     // Validado owner — fuente: ARCA Jun 2026
+          cuotaValidated: true,
+          // TODO: VALIDAR - fuente: arca.gob.ar/monotributo — tabla desglose Cat J
           impuestoIntegrado: null,
           aporteSIPA: null,
           obraSocial: null,

@@ -94,7 +94,7 @@ export const content = {
   tabla: {
     h2: "Tabla de categorías Monotributo — Junio 2026",
     fuente: "Fuente: ARCA — Ley 27.743. Próxima actualización: julio 2026.",
-    nota: "(*) Datos pendientes de validación oficial en ARCA. Se actualizarán cuando el owner los confirme.",
+    nota: "(*) Topes B–F pendientes de validación oficial en ARCA. Cuota Cat K pendiente. Se actualizan cuando el owner los confirme.",
   },
 
   recategorizacion: {

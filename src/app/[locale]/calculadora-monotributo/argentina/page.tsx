@@ -288,10 +288,10 @@ export default async function ArgentinaMonotributoPage({ params }: PageProps) {
                   { cat: "D", tope: "$27.000.000 *", srv: "$72.414,10", bien: "$70.661,26", topeOk: false, cuotaOk: true },
                   { cat: "E", tope: "$40.000.000 *", srv: "$102.537,97", bien: "$92.658,35", topeOk: false, cuotaOk: true },
                   { cat: "F", tope: "$52.000.000 *", srv: "$129.045,32", bien: "$111.198,27", topeOk: false, cuotaOk: true },
-                  { cat: "G", tope: "PENDIENTE", srv: "PENDIENTE", bien: "PENDIENTE", topeOk: false, cuotaOk: false },
-                  { cat: "H", tope: "PENDIENTE", srv: "PENDIENTE", bien: "PENDIENTE", topeOk: false, cuotaOk: false },
-                  { cat: "I", tope: "PENDIENTE", srv: "PENDIENTE", bien: "PENDIENTE", topeOk: false, cuotaOk: false },
-                  { cat: "J", tope: "PENDIENTE", srv: "PENDIENTE", bien: "PENDIENTE", topeOk: false, cuotaOk: false },
+                  { cat: "G", tope: "$46.211.109", srv: "$197.108,23", bien: "$118.920,05", topeOk: true, cuotaOk: true },
+                  { cat: "H", tope: "$70.113.407", srv: "$447.346,93", bien: "$238.038,48", topeOk: true, cuotaOk: true },
+                  { cat: "I", tope: "$78.479.212", srv: "$824.802,26", bien: "$355.672,64", topeOk: true, cuotaOk: true },
+                  { cat: "J", tope: "$89.872.640", srv: "$999.007,65", bien: "$434.895,92", topeOk: true, cuotaOk: true },
                   { cat: "K", tope: "$108.357.084", srv: "PENDIENTE", bien: "PENDIENTE", topeOk: true, cuotaOk: false },
                 ].map((row) => (
                   <tr key={row.cat} className="hover:bg-zinc-50 transition-colors">
